@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+  .headerDiv{
+    @apply
+    top-0
+    z-50
+    sticky
+  }
+
+  .appOptions{
+    @apply
+    md:hidden
+  }
+
+  .appName{
+    @apply
+    hidden 
+    lg:inline-flex 
+    capitalize 
+    font-robot-slab 
+    text-2xl
+  }
+
+  .centerDiv{
+    @apply
+    hidden 
+    md:flex 
+    items-center 
+    space-x-5 
+  }
+
+  .mainDim{
+    @apply
+    max-w-[540px]
+    md:max-w-[1080px]
+    lg:max-w-[1300px]
+  }
+
+  .routerName{
+    @apply
+    hidden
+    lg:inline-flex
+    capitalize 
+    text-lg 
+    font-font-robot 
+    text-blue-500 
+    font-normal
+  }
+
+  .optionsTitle{
+    @apply
+    capitalize 
+    text-lg 
+    font-font-robot 
+    text-blue-500 
+    font-normal
+  }
+
+  .inputBox{
+    @apply
+    grid
+    lg:flex
+    w-full
+    lg:w-screen
+    max-w-6xl
+    items-center
+  }
+
+  .mainDiv{
+    @apply
+    h-screen
+    grid
+    md:flex
+    mx-auto
+    xl:max-w-[1500px]
+    bg-gray-100
+  }
+
+  .inputDim{
+    @apply 
+    h-[226px] 
+    md:h-[290px] 
+    lg:h-[390px]
+  }
+
+  .photoAddOptions{
+    @apply
+    hidden
+    lg:grid
+  }
+
+  .mobilePhotoAdd{
+    @apply
+    flex
+    items-center
+    justify-evenly
+    lg:hidden
+  }
+
+  .articleDiv{
+    @apply
+    bg-gray-800
+    grid
+    max-w-md
+    lg:max-w-4xl
+    mx-auto
+    justify-center
+    rounded-lg
+    lg:items-center
+    lg:justify-evenly
+    px-10
+    py-7
+    space-y-4
+  }
+
+  .userName{
+    @apply
+    hidden
+    md:inline-flex
+  }
+
+  .jpgDisplay{
+    @apply
+    hidden
+    lg:inline-flex
+  }
+}
