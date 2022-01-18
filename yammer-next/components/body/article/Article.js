@@ -1,8 +1,8 @@
 //front-end
 import Button from '@material-tailwind/react/Button'
 import Icon from '@material-tailwind/react/Icon'
-import moment from 'moment'
 //back-end
+import { forwardRef } from 'react'
 import { useRouter } from 'next/router'
 
 function Article ({
@@ -17,9 +17,7 @@ function Article ({
   const router = useRouter()
 
   const goToPost = () => {
-    /**
-     * router.push(`/post/${id}`)
-     */
+    router.push(`/post/${id}`)
   }
 
   return (
@@ -57,23 +55,33 @@ function Article ({
             {name}
           </h4>
         </div>
-        <h5
-          className='
+        {timestamp ? (
+          <h5
+            className='
                 text-sm
                 font-thin 
                 font-google-sans 
                 text-gray-500'
-        >
-          {timestamp
-            ? moment(timestamp).format('MM/DD/YYYY, LT')
-            : 'Loading...'}
-        </h5>
+          >
+            {new Date(timestamp?.toDate()).toLocaleString()}
+          </h5>
+        ) : (
+          <h5
+            className='
+                text-sm
+                font-thin 
+                font-google-sans 
+                text-gray-500'
+          >
+            Loading...
+          </h5>
+        )}
       </div>
       {articleImage ? (
         <img
           src={articleImage}
           className='
-            p-10
+            p-5
             rounded-lg
             h-full
             w-full
@@ -97,6 +105,7 @@ function Article ({
       </h4>
       <div className='w-[190px] h-[80px] mx-auto'>
         <Button
+          onClick={goToPost}
           color='blue'
           buttonType='link'
           block={false}

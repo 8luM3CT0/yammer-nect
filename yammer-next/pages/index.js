@@ -16,12 +16,13 @@ import InputBox from '../components/body/input-box/InputBox'
 import Article from '../components/body/article/Article'
 //back-end
 import { useRouter } from 'next/router'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { store } from '../firebase'
 import { useCollection } from 'react-firebase-hooks/firestore'
 
 export default function Home () {
   const [openTab, setOpenTab] = useState(1)
+  const [posts, setPosts] = useState([])
 
   const [articleSnapshot] = useCollection(
     store.collection('posts').orderBy('timestamp', 'desc')

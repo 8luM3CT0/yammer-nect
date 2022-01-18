@@ -88,11 +88,15 @@ function InputBox () {
           inputBox 
           inputDim 
           bg-gray-800
+          border-4
+          border-blue-400
           rounded-lg 
           sticky
           top-0
           z-50
+          py-[20px]
           px-[40px]
+          shadow-xl
           '
         >
           <textarea

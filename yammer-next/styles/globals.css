@@ -59,15 +59,6 @@
     font-normal
   }
 
-  .inputBox{
-    @apply
-    grid
-    lg:flex
-    w-full
-    lg:w-screen
-    max-w-6xl
-    items-center
-  }
 
   .mainDiv{
     @apply
@@ -77,6 +68,16 @@
     mx-auto
     xl:max-w-[1500px]
     bg-gray-100
+  }
+
+  .inputBox{
+    @apply
+    grid
+    lg:flex
+    w-full
+    lg:w-screen
+    max-w-6xl
+    items-center
   }
 
   .inputDim{
@@ -112,7 +113,7 @@
     lg:items-center
     lg:justify-evenly
     px-10
-    py-7
+    py-4
     space-y-4
   }
 
@@ -126,5 +127,18 @@
     @apply
     hidden
     lg:inline-flex
+  }
+
+  .postDiv{
+    @apply
+    grid
+    w-full
+    lg:w-screen
+    max-w-6xl
+    items-center
+  }
+  .postDim{
+    @apply
+    h-[750px] 
   }
 }
