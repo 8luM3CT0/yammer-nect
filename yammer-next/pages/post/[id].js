@@ -29,7 +29,14 @@ function UserPost () {
       </Head>
 
       <PostHeader />
-      <div className='mainDiv'>
+      <div
+        className='
+      flex
+      mx-auto
+      max-w-[1300px]
+      bg-gray-100 
+      h-screen'
+      >
         <div
           className='
         postDiv
@@ -82,7 +89,7 @@ function UserPost () {
               <h5
                 className='
               desktopDiv
-              text-sm 
+              text-xs
               font-thin 
               font-google-sans 
               text-gray-500'
@@ -93,7 +100,7 @@ function UserPost () {
               <h5
                 className='
               desktopDiv
-              text-sm
+              text-xs
               font-thin
               font-google-sans
               text-gray-500
@@ -133,7 +140,7 @@ function UserPost () {
           h-full 
           font-normal 
           font-robot-slab 
-          pb-[30px]
+          pb-[120px]
           text-blue-400'
             >
               {snapshot?.data().post}
