@@ -129,7 +129,9 @@ function UserPost () {
           >
             <h4
               className='
-          text-lg 
+          text-lg
+          overflow-y-scroll
+          scrollbar-hide 
           font-normal 
           font-robot-slab 
           text-blue-400'
