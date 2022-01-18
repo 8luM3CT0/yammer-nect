@@ -119,8 +119,7 @@ function UserPost () {
           )}
           <div
             className='
-          overflow-y-scroll 
-          scrollbar-hide 
+          overflow-y-scroll
           h-[110px] 
           line-clamp-3 
           p-4
