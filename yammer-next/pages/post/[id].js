@@ -81,6 +81,7 @@ function UserPost () {
             {snapshot?.data().timestamp ? (
               <h5
                 className='
+              desktopDiv
               text-sm 
               font-thin 
               font-google-sans 
@@ -91,6 +92,7 @@ function UserPost () {
             ) : (
               <h5
                 className='
+              desktopDiv
               text-sm
               font-thin
               font-google-sans
@@ -119,13 +121,15 @@ function UserPost () {
             className='
           overflow-y-scroll 
           scrollbar-hide 
-          h-[210px] 
+          h-[110px] 
           line-clamp-3 
-          p-4'
+          p-4
+          pb-[90px]
+          '
           >
             <h4
               className='
-          text-lg  
+          text-lg 
           font-normal 
           font-robot-slab 
           text-blue-400'
