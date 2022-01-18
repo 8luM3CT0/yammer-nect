@@ -128,9 +128,9 @@ function UserPost () {
           <div
             className='
           h-full 
-          overflow-y-auto
+          w-full
+          overflow-y-scroll
           scrollbar-hide
-          line-clamp-3 
           p-4
           pb-[90px]
           '
