@@ -141,4 +141,16 @@
     @apply
     h-[750px] 
   }
+
+  .desktopDiv{
+    @apply
+    hidden
+    lg:inline-flex
+  }
+
+  .mobileDiv{
+    @apply
+    inline-flex
+    lg:hidden
+  }
 }
