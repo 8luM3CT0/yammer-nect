@@ -119,8 +119,9 @@ function UserPost () {
           )}
           <div
             className='
+          h-full 
           overflow-y-scroll
-          h-[110px] 
+          scrollbar-hide
           line-clamp-3 
           p-4
           pb-[90px]
@@ -128,7 +129,8 @@ function UserPost () {
           >
             <h4
               className='
-          text-lg 
+          text-lg
+          h-full 
           font-normal 
           font-robot-slab 
           pb-[30px]
