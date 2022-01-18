@@ -35,14 +35,14 @@ function UserPost () {
         postDiv
         postDim 
         bg-gray-800 
-        p-[100px] 
+        p-[90px] 
         mx-auto
         rounded-lg
         z-50
         sticky
         top-0
-        mt-12
         flex-[0.5]
+        mt-6
         '
         >
           <div
@@ -117,12 +117,22 @@ function UserPost () {
           ) : (
             ' '
           )}
-          <div className='postText'>
+          <div
+            className='
+          overflow-y-scroll 
+          scrollbar-hide 
+          h-[110px] 
+          line-clamp-3 
+          p-4
+          pb-[90px]
+          '
+          >
             <h4
               className='
-          text-lg
+          text-lg 
           font-normal 
           font-robot-slab 
+          pb-[30px]
           text-blue-400'
             >
               {snapshot?.data().post}
