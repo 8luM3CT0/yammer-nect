@@ -117,21 +117,10 @@ function UserPost () {
           ) : (
             ' '
           )}
-          <div
-            className='
-          overflow-y-scroll 
-          scrollbar-hide 
-          h-[110px] 
-          line-clamp-3 
-          p-4
-          pb-[90px]
-          '
-          >
+          <div className='postText'>
             <h4
               className='
           text-lg
-          overflow-y-scroll
-          scrollbar-hide 
           font-normal 
           font-robot-slab 
           text-blue-400'

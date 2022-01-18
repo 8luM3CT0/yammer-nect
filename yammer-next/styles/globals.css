@@ -153,4 +153,14 @@
     inline-flex
     lg:hidden
   }
+
+  .postText{
+    @apply
+    overflow-y-scroll 
+    scrollbar-hide 
+    h-[110px] 
+    line-clamp-3 
+    p-4
+    pb-[90px]
+  }
 }
