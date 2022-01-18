@@ -45,6 +45,7 @@ function UserPost () {
         p-[90px] 
         mx-auto
         rounded-lg
+        grid
         z-50
         sticky
         top-0
@@ -127,7 +128,7 @@ function UserPost () {
           <div
             className='
           h-full 
-          overflow-y-scroll
+          overflow-y-auto
           scrollbar-hide
           line-clamp-3 
           p-4
