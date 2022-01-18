@@ -105,50 +105,25 @@ function Article ({
       >
         {post}
       </h4>
-      <div className='justify-between flex items-center px-4'>
-        <div className='w-[190px] h-[80px] mx-auto'>
-          <Button
-            onClick={goToPost}
-            color='blue'
-            buttonType='link'
-            block={false}
-            iconOnly={false}
-            rounded={false}
-            ripple='light'
-          >
-            <h2
-              className='
+      <div className='w-[190px] h-[80px] mx-auto'>
+        <Button
+          onClick={goToPost}
+          color='blue'
+          buttonType='link'
+          block={false}
+          iconOnly={false}
+          rounded={false}
+          ripple='light'
+        >
+          <h2
+            className='
           capitalize 
           text-sm 
           font-google-sans'
-            >
-              Read more
-            </h2>
-          </Button>
-        </div>
-        {timestamp ? (
-          <h5
-            className='
-            mobileDiv
-                text-xs
-                font-thin 
-                font-google-sans 
-                text-gray-500'
           >
-            {new Date(timestamp?.toDate()).toLocaleString()}
-          </h5>
-        ) : (
-          <h5
-            className='
-            mobileDiv
-                text-xs
-                font-thin 
-                font-google-sans 
-                text-gray-500'
-          >
-            Loading...
-          </h5>
-        )}
+            Read more
+          </h2>
+        </Button>
       </div>
     </div>
   )
