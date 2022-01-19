@@ -126,7 +126,7 @@ function Header () {
               buttonType='link'
               iconOnly={false}
               block={false}
-              rounded={false}
+              rounded={true}
               ripple='light'
             >
               <div className='grid space-y-3'>
@@ -139,7 +139,7 @@ function Header () {
               buttonType='link'
               iconOnly={false}
               block={false}
-              rounded={false}
+              rounded={true}
               ripple='light'
             >
               <div className='grid space-y-3'>
@@ -152,12 +152,12 @@ function Header () {
               buttonType='link'
               iconOnly={false}
               block={false}
-              rounded={false}
+              rounded={true}
               ripple='light'
             >
               <div className='grid space-y-3'>
-                <Icon name='local_convenience_store' />
-                <h2 className='routerName'>Buy</h2>
+                <Icon name='monetization_on' />
+                <h2 className='routerName'>Crypto</h2>
               </div>
             </Button>
             <Button
@@ -166,7 +166,7 @@ function Header () {
               buttonType='link'
               iconOnly={false}
               block={false}
-              rounded={false}
+              rounded={true}
               ripple='light'
             >
               <div className='grid space-y-3'>
@@ -274,8 +274,8 @@ function Header () {
               ripple='light'
             >
               <div className='justify-evenly flex items-center space-x-3'>
-                <Icon name='local_convenience_store' />
-                <h2 className='optionsTitle'>Buy</h2>
+                <Icon name='monetization_on' />
+                <h2 className='optionsTitle'>Crypto</h2>
               </div>
             </Button>
             <Button
