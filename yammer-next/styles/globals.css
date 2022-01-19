@@ -117,6 +117,16 @@
     space-y-4
   }
 
+  .postMainArea{
+    @apply
+    flex
+    mx-auto
+    max-w-full
+    xl:max-w-[1300px]
+    bg-gray-100 
+    h-screen
+  }
+
   .userName{
     @apply
     hidden

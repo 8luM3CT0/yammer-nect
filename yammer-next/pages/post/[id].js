@@ -29,14 +29,7 @@ function UserPost () {
       </Head>
 
       <PostHeader />
-      <div
-        className='
-      flex
-      mx-auto
-      max-w-[1300px]
-      bg-gray-100 
-      h-screen'
-      >
+      <div className='postMainArea'>
         <div
           className='
         postDiv
