@@ -117,6 +117,17 @@ function UserPost () {
             w-full 
             relative'
             />
+          ) : snapshot?.data().jpgWeb ? (
+            <img
+              src={snapshot?.data().jpgWeb}
+              alt=''
+              className='
+            pt-10 
+            rounded-xl 
+            h-full
+            w-full 
+            relative'
+            />
           ) : (
             ' '
           )}

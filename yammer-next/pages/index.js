@@ -62,6 +62,7 @@ export default function Home () {
               name={doc.data().name}
               post={doc.data().post}
               articleImage={doc.data().articleImage}
+              jpgWeb={doc.data().jpgWeb}
               photoURL={doc.data().photoURL}
               timestamp={doc.data().timestamp}
             />

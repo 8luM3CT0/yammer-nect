@@ -12,17 +12,13 @@ import { creds, store, provider } from '../../../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import firebase from 'firebase'
 
-function Header () {
+function NewsHeader () {
   const [user] = useAuthState(creds)
   const router = useRouter()
   const [showOptions, setShowOptions] = useState(false)
   const [showLogin, setShowLogin] = useState(false)
   const [email, setEmail] = useState(false)
   const [password, setPassword] = useState(false)
-
-  const goToNews = () => {
-    router.push('/news')
-  }
 
   const signIn = e => {
     e.preventDefault()
@@ -115,12 +111,26 @@ function Header () {
               ripple='dark'
               className='space-x-3'
             >
-              <Icon name='cloud' />
-              <h2 className='appName'>Blume</h2>
+              <Icon name='newspaper' />
+              <h2 className='appName'>News</h2>
             </Button>
           </div>
           {/**header center /routers */}
           <div className='centerDiv'>
+            <Button
+              onClick={() => router.push('/')}
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <div className='grid space-y-3'>
+                <Icon name='home' />
+                <h2 className='routerName'>Home</h2>
+              </div>
+            </Button>
             <Button
               color='blue'
               buttonType='link'
@@ -158,20 +168,6 @@ function Header () {
               <div className='grid space-y-3'>
                 <Icon name='local_convenience_store' />
                 <h2 className='routerName'>Buy</h2>
-              </div>
-            </Button>
-            <Button
-              onClick={() => router.push('/news')}
-              color='blue'
-              buttonType='link'
-              iconOnly={false}
-              block={false}
-              rounded={false}
-              ripple='light'
-            >
-              <div className='grid space-y-3'>
-                <Icon name='newspaper' />
-                <h2 className='routerName'>News</h2>
               </div>
             </Button>
           </div>
@@ -420,4 +416,4 @@ function Header () {
   )
 }
 
-export default Header
+export default NewsHeader

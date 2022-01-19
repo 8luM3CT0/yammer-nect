@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 function Article ({
   id,
   articleImage,
+  jpgWeb,
   email,
   name,
   photoURL,
@@ -82,6 +83,17 @@ function Article ({
       {articleImage ? (
         <img
           src={articleImage}
+          className='
+            p-5
+            rounded-lg
+            h-full
+            w-full
+            relative
+            '
+        />
+      ) : jpgWeb ? (
+        <img
+          src={jpgWeb}
           className='
             p-5
             rounded-lg

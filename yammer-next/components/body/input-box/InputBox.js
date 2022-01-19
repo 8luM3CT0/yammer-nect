@@ -18,6 +18,7 @@ function InputBox () {
   const [jpgPost, setJPGPost] = useState(null)
   const [openPic, setOpenPic] = useState(false)
   const [picFromWeb, setPicFromWeb] = useState(false)
+  const [jpgLink, setJPGLink] = useState('')
 
   const addImage = e => {
     const reader = new FileReader()
@@ -30,8 +31,16 @@ function InputBox () {
     setOpenPic(false)
   }
 
+  const picFromWebExists = e => {
+    e.preventDefault()
+
+    setJPGLink(jpgLink)
+    setPicFromWeb(false)
+  }
+
   const removeJPG = () => {
     setJPGPost(null)
+    setJPGLink('')
   }
 
   const postArticle = e => {
@@ -44,7 +53,8 @@ function InputBox () {
         name: user.displayName,
         email: user.email,
         photoURL: user.photoURL,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        jpgWeb: jpgLink
       })
       .then(doc => {
         if (jpgPost) {
@@ -79,6 +89,7 @@ function InputBox () {
         }
       })
     inputRef.current.value = ' '
+    setJPGLink('')
   }
 
   return (
@@ -186,6 +197,23 @@ function InputBox () {
               >
                 <img
                   src={jpgPost}
+                  alt=''
+                  className='
+              jpgDisplay
+              rounded-xl 
+              h-24 
+              w-32 
+              border 
+              border-blue-200'
+                />
+              </div>
+            ) : jpgLink ? (
+              <div
+                className='hover:opacity-90 grid space-y-2'
+                onClick={removeJPG}
+              >
+                <img
+                  src={jpgLink}
                   alt=''
                   className='
               jpgDisplay
@@ -328,25 +356,68 @@ function InputBox () {
         toggler={() => setPicFromWeb(false)}
       >
         <ModalHeader toggler={() => setPicFromWeb(false)}>
-          <h1 className='text-xl p-10 font-robot-slab font-semibold'>
+          <h1
+            className='
+          text-xl 
+          text-blue-400 
+          p-10 
+          font-robot-slab 
+          font-semibold'
+          >
             Add a picture from the web
           </h1>
         </ModalHeader>
         <ModalBody>
-          <div className='p-[70px] grid space-y-4'>
-            <h2 className='text-lg font-google-sans font-normal'>Paste here</h2>
+          <div className='p-[30px] grid space-y-4'>
+            <h2
+              className='
+            text-lg 
+            text-blue-500 
+            font-google-sans 
+            font-normal'
+            >
+              Paste here
+            </h2>
             <input
               type='url'
+              value={jpgLink}
+              onChange={e => setJPGLink(e.target.value)}
               placeholder='URL ?...'
               className='
             outline-none 
             border-b-2 
+            text-lg
+            text-gray-600
             border-blue-100 
             bg-transparent 
             font-robot-slab'
             />
           </div>
         </ModalBody>
+        <ModalFooter>
+          <Button
+            onClick={e => setPicFromWeb(false)}
+            color='red'
+            buttonType='link'
+            rounded={false}
+            block={false}
+            iconOnly={false}
+            ripple='dark'
+          >
+            Cancel
+          </Button>
+          <Button
+            onClick={picFromWebExists}
+            color='blue'
+            buttonType='link'
+            rounded={false}
+            block={false}
+            iconOnly={false}
+            ripple='light'
+          >
+            Add
+          </Button>
+        </ModalFooter>
       </Modal>
     </>
   )
