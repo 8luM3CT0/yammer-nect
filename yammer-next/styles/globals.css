@@ -117,15 +117,6 @@
     space-y-4
   }
 
-  .postMainArea{
-    @apply
-    flex
-    mx-auto
-    max-w-full
-    xl:max-w-[1300px]
-    bg-gray-100 
-    h-screen
-  }
 
   .userName{
     @apply
@@ -142,14 +133,24 @@
   .postDiv{
     @apply
     grid
-    w-full
-    lg:w-screen
-    max-w-6xl
+    w-screen
+    max-w-full
+    lg:max-w-6xl
     items-center
   }
   .postDim{
     @apply
     h-[750px] 
+  }
+
+  .postMainArea{
+    @apply
+    flex
+    mx-auto
+    max-w-full
+    xl:max-w-[1300px]
+    bg-gray-100 
+    h-screen
   }
 
   .desktopDiv{
