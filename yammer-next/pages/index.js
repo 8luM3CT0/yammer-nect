@@ -22,12 +22,10 @@ import { useCollection } from 'react-firebase-hooks/firestore'
 
 export default function Home () {
   const [openTab, setOpenTab] = useState(1)
-  const [posts, setPosts] = useState([])
 
   const [articleSnapshot] = useCollection(
     store.collection('posts').orderBy('timestamp', 'desc')
   )
-
   return (
     <div
       className='

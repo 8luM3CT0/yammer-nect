@@ -138,7 +138,7 @@ function UserPost () {
             <h4
               className='
           text-lg
-          h-full 
+          h-[210px]
           font-normal 
           font-robot-slab 
           pb-[120px]

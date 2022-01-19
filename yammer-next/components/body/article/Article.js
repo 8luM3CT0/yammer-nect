@@ -38,7 +38,7 @@ function Article ({
         >
           <img
             src={photoURL}
-            alt='photo'
+            alt=''
             className='
                     rounded-3xl 
                     h-10
