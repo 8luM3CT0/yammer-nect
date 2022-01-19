@@ -22,6 +22,7 @@ function UserPost () {
         bg-gray-50
         overflow-hidden
         h-screen
+        pb-[200px]
         '
     >
       <Head>
@@ -66,6 +67,7 @@ function UserPost () {
                 className='
               rounded-3xl 
               h-10 
+              w-10
               border-4 
               border-blue-300'
               />
@@ -109,9 +111,9 @@ function UserPost () {
               src={snapshot?.data().articleImage}
               alt=''
               className='
-            p-5 
+            pt-10 
             rounded-xl 
-            h-full 
+            h-full
             w-full 
             relative'
             />
@@ -124,17 +126,19 @@ function UserPost () {
           w-full
           overflow-y-scroll
           scrollbar-hide
-          p-4
-          pb-[90px]
+          rounded-lg
+          px-[70px]
+          pb-[70px]
+          mt-[30px]
+          bg-gray-600
           '
           >
             <h4
-              className='
+              className='  
           text-lg
           h-[210px]
           font-normal 
           font-robot-slab 
-          pb-[120px]
           text-blue-400'
             >
               {snapshot?.data().post}

@@ -232,7 +232,7 @@ function Header () {
             className='
                     grid 
                     items-center 
-                    p-[120px]'
+                    p-[40px]'
           >
             <Button
               color='blue'
@@ -312,7 +312,7 @@ function Header () {
             Sign in
           </h2>
           <ModalBody>
-            <div className='p-[120px] space-y-3 grid justify-center'>
+            <div className='p-[30px] space-y-3 grid justify-center'>
               <p
                 className='
                 text-base 

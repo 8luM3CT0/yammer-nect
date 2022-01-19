@@ -140,7 +140,7 @@
   }
   .postDim{
     @apply
-    h-[750px] 
+    h-full
   }
 
   .postMainArea{
@@ -149,8 +149,6 @@
     mx-auto
     max-w-full
     xl:max-w-[1300px]
-    bg-gray-100 
-    h-screen
   }
 
   .desktopDiv{

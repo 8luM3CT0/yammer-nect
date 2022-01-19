@@ -17,6 +17,7 @@ function InputBox () {
   const filePicker = useRef(null)
   const [jpgPost, setJPGPost] = useState(null)
   const [openPic, setOpenPic] = useState(false)
+  const [picFromWeb, setPicFromWeb] = useState(false)
 
   const addImage = e => {
     const reader = new FileReader()
@@ -219,6 +220,7 @@ function InputBox () {
                   onChange={addImage}
                 />
                 <Button
+                  onClick={e => setPicFromWeb(true)}
                   color='blue'
                   buttonType='link'
                   rounded={false}
@@ -317,6 +319,32 @@ function InputBox () {
               <Icon name='add_to_photos' />
               <h3 className='text-xs capitalize font-google-sans'>web</h3>
             </Button>
+          </div>
+        </ModalBody>
+      </Modal>
+      <Modal
+        active={picFromWeb}
+        size='regular'
+        toggler={() => setPicFromWeb(false)}
+      >
+        <ModalHeader toggler={() => setPicFromWeb(false)}>
+          <h1 className='text-xl p-10 font-robot-slab font-semibold'>
+            Add a picture from the web
+          </h1>
+        </ModalHeader>
+        <ModalBody>
+          <div className='p-[70px] grid space-y-4'>
+            <h2 className='text-lg font-google-sans font-normal'>Paste here</h2>
+            <input
+              type='url'
+              placeholder='URL ?...'
+              className='
+            outline-none 
+            border-b-2 
+            border-blue-100 
+            bg-transparent 
+            font-robot-slab'
+            />
           </div>
         </ModalBody>
       </Modal>
