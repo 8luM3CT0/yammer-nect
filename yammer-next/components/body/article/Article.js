@@ -22,7 +22,10 @@ function Article ({
   }
 
   return (
-    <div className='articleDiv'>
+    <div
+      onClick={goToPost}
+      className='articleDiv cursor-pointer hover:bg-gray-600 transition transform duration-400 ease-in-out'
+    >
       <div
         className='
             w-full 
@@ -117,26 +120,6 @@ function Article ({
       >
         {post}
       </h4>
-      <div className='w-[190px] h-[80px] mx-auto'>
-        <Button
-          onClick={goToPost}
-          color='blue'
-          buttonType='link'
-          block={false}
-          iconOnly={false}
-          rounded={false}
-          ripple='light'
-        >
-          <h2
-            className='
-          capitalize 
-          text-sm 
-          font-google-sans'
-          >
-            Read more
-          </h2>
-        </Button>
-      </div>
     </div>
   )
 }

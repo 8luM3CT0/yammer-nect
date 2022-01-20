@@ -90,7 +90,7 @@ function UserPost () {
               font-google-sans 
               text-gray-500'
               >
-                1/17/2022, 8:22 pm
+                {moment(snapshot?.data().timestamp).format('MMM/DD/YY, LT')}
               </h5>
             ) : (
               <h5
@@ -111,7 +111,8 @@ function UserPost () {
               src={snapshot?.data().articleImage}
               alt=''
               className='
-            pt-10 
+            mt-10
+            object-top 
             rounded-xl 
             h-full
             w-full 
@@ -122,7 +123,8 @@ function UserPost () {
               src={snapshot?.data().jpgWeb}
               alt=''
               className='
-            pt-10 
+            mt-10
+            object-top 
             rounded-xl 
             h-full
             w-full 
@@ -131,32 +133,17 @@ function UserPost () {
           ) : (
             ' '
           )}
-          <div
-            className='
-          h-full 
-          w-full
-          overflow-y-scroll
-          scrollbar-hide
-          grid
-          place-items-center
-          rounded-lg
-          px-[70px]
-          pb-[70px]
-          mt-[30px]
-          bg-gray-600
-          '
-          >
-            <h4
-              className='  
+          <h4
+            className='  
           text-lg
-          h-[210px]
+          inline
+          align-middle
           font-normal 
           font-robot-slab 
           text-blue-400'
-            >
-              {snapshot?.data().post}
-            </h4>
-          </div>
+          >
+            {snapshot?.data().post}
+          </h4>
         </div>
       </div>
     </div>
