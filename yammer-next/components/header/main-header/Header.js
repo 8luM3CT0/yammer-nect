@@ -20,10 +20,6 @@ function Header () {
   const [email, setEmail] = useState(false)
   const [password, setPassword] = useState(false)
 
-  const goToNews = () => {
-    router.push('/news')
-  }
-
   const signIn = e => {
     e.preventDefault()
 
@@ -70,6 +66,8 @@ function Header () {
         <div
           className='
             bg-gray-800
+            border-b-2
+            border-blue-300
             flex-grow 
             justify-evenly 
             flex
@@ -172,6 +170,20 @@ function Header () {
               <div className='grid space-y-3'>
                 <Icon name='newspaper' />
                 <h2 className='routerName'>News</h2>
+              </div>
+            </Button>
+            <Button
+              onClick={() => router.push('/blog')}
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={true}
+              ripple='light'
+            >
+              <div className='grid space-y-3'>
+                <Icon name='rate_review' />
+                <h2 className='routerName'>Blogs</h2>
               </div>
             </Button>
           </div>
@@ -290,6 +302,20 @@ function Header () {
               <div className='justify-evenly flex items-center space-x-3'>
                 <Icon name='newspaper' />
                 <h2 className='optionsTitle'>News</h2>
+              </div>
+            </Button>
+            <Button
+              onClick={() => router.push('/blog')}
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <div className='justify-evenly flex items-center space-x-3'>
+                <Icon name='rate_review' />
+                <h2 className='optionsTitle'>Blogs</h2>
               </div>
             </Button>
           </div>

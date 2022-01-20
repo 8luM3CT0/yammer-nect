@@ -12,7 +12,7 @@ import { creds, store, provider } from '../../../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import firebase from 'firebase'
 
-function PostHeader () {
+function BlogHeader () {
   const [user] = useAuthState(creds)
   const router = useRouter()
   const [showOptions, setShowOptions] = useState(false)
@@ -74,18 +74,6 @@ function PostHeader () {
             p-5
             items-center'
         >
-          {/**router to home */}
-          <Button
-            onClick={() => router.push('/')}
-            color='blue'
-            buttonType='link'
-            iconOnly={false}
-            block={false}
-            rounded={false}
-            ripple='dark'
-          >
-            <Icon name='arrow_back_ios' />
-          </Button>
           {/**header left /logo */}
           <div
             className='
@@ -94,6 +82,28 @@ function PostHeader () {
         items-center 
         space-x-5 '
           >
+            <div className='appOptions'>
+              <Button
+                onClick={e => setShowOptions(true)}
+                color='blue'
+                buttonType='link'
+                iconOnly={false}
+                block={false}
+                rounded={false}
+                ripple='dark'
+                className='grid'
+              >
+                <Icon name='apps' />
+                <h5
+                  className='
+                text-sm 
+                font-robot-slab 
+                capitalize'
+                >
+                  Apps
+                </h5>
+              </Button>
+            </div>
             <Button
               color='blue'
               buttonType='link'
@@ -103,11 +113,80 @@ function PostHeader () {
               ripple='dark'
               className='space-x-3'
             >
-              <Icon name='signpost' />
-              <h2 className='appName'>Post</h2>
+              <Icon name='rate_review' />
+              <h2 className='appName'>Blog</h2>
             </Button>
           </div>
-
+          {/**header center /routers */}
+          <div className='centerDiv'>
+            <Button
+              onClick={() => router.push('/')}
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <div className='grid space-y-3'>
+                <Icon name='home' />
+                <h2 className='routerName'>Home</h2>
+              </div>
+            </Button>
+            <Button
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <div className='grid space-y-3'>
+                <Icon name='group' />
+                <h2 className='routerName'>Confidants</h2>
+              </div>
+            </Button>
+            <Button
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <div className='grid space-y-3'>
+                <Icon name='inbox' />
+                <h2 className='routerName'>Chat</h2>
+              </div>
+            </Button>
+            <Button
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <div className='grid space-y-3'>
+                <Icon name='monetization_on' />
+                <h2 className='routerName'>Crypto</h2>
+              </div>
+            </Button>
+            <Button
+              onClick={() => router.push('/news')}
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <div className='grid space-y-3'>
+                <Icon name='newspaper' />
+                <h2 className='routerName'>News</h2>
+              </div>
+            </Button>
+          </div>
           {/**header right / user & sign up options */}
           {!user ? (
             <Button
@@ -170,7 +249,7 @@ function PostHeader () {
             className='
                     grid 
                     items-center 
-                    p-[120px]'
+                    p-[40px]'
           >
             <Button
               color='blue'
@@ -207,11 +286,12 @@ function PostHeader () {
               ripple='light'
             >
               <div className='justify-evenly flex items-center space-x-3'>
-                <Icon name='local_convenience_store' />
-                <h2 className='optionsTitle'>Buy</h2>
+                <Icon name='monetization_on' />
+                <h2 className='optionsTitle'>Crypto</h2>
               </div>
             </Button>
             <Button
+              onClick={() => router.push('/news')}
               color='blue'
               buttonType='link'
               iconOnly={false}
@@ -250,7 +330,7 @@ function PostHeader () {
             Sign in
           </h2>
           <ModalBody>
-            <div className='p-[120px] space-y-3 grid justify-center'>
+            <div className='p-[30px] space-y-3 grid justify-center'>
               <p
                 className='
                 text-base 
@@ -352,4 +432,4 @@ function PostHeader () {
   )
 }
 
-export default PostHeader
+export default BlogHeader

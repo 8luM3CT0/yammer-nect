@@ -137,6 +137,8 @@ function UserPost () {
           w-full
           overflow-y-scroll
           scrollbar-hide
+          grid
+          place-items-center
           rounded-lg
           px-[70px]
           pb-[70px]

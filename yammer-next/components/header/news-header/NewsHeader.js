@@ -66,6 +66,8 @@ function NewsHeader () {
         <div
           className='
             bg-gray-800
+            border-b-2
+            border-blue-300
             flex-grow 
             justify-evenly 
             flex
@@ -170,6 +172,20 @@ function NewsHeader () {
                 <h2 className='routerName'>Crypto</h2>
               </div>
             </Button>
+            <Button
+              onClick={() => router.push('/blog')}
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <div className='grid space-y-3'>
+                <Icon name='rate_review' />
+                <h2 className='routerName'>Blog</h2>
+              </div>
+            </Button>
           </div>
           {/**header right / user & sign up options */}
           {!user ? (
@@ -236,6 +252,28 @@ function NewsHeader () {
                     p-[40px]'
           >
             <Button
+              onClick={() => router.push('/')}
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <div className='justify-evenly flex items-center space-x-3'>
+                <Icon name='home' />
+                <h2 className='optionsTitle'>Home</h2>
+              </div>
+            </Button>
+            <Button
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            ></Button>
+            <Button
               color='blue'
               buttonType='link'
               iconOnly={false}
@@ -275,7 +313,7 @@ function NewsHeader () {
               </div>
             </Button>
             <Button
-              onClick={() => router.push('/news')}
+              onClick={() => router.push('/blogs')}
               color='blue'
               buttonType='link'
               iconOnly={false}
@@ -284,8 +322,8 @@ function NewsHeader () {
               ripple='light'
             >
               <div className='justify-evenly flex items-center space-x-3'>
-                <Icon name='newspaper' />
-                <h2 className='optionsTitle'>News</h2>
+                <Icon name='rate_review' />
+                <h2 className='optionsTitle'>Blogs</h2>
               </div>
             </Button>
           </div>

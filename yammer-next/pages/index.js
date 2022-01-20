@@ -1,6 +1,6 @@
 //front-end
 import Head from 'next/head'
-import Header from '../components/header/main-header/Header'
+import { Header, InputBox, Article } from '../components'
 import Button from '@material-tailwind/react/Button'
 import Icon from '@material-tailwind/react/Icon'
 import Modal from '@material-tailwind/react/Modal'
@@ -12,8 +12,6 @@ import TabList from '@material-tailwind/react/TabList'
 import TabItem from '@material-tailwind/react/TabItem'
 import TabContent from '@material-tailwind/react/TabContent'
 import TabPane from '@material-tailwind/react/TabPane'
-import InputBox from '../components/body/input-box/InputBox'
-import Article from '../components/body/article/Article'
 //back-end
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'

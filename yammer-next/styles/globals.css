@@ -86,6 +86,20 @@
     md:h-[290px] 
     lg:h-[390px]
   }
+  
+  .inputDivAdd{
+    @apply
+    bg-gray-800
+    border-b-4
+    border-blue-400
+    rounded-lg 
+    lg:sticky
+    top-2
+    z-50
+    py-[20px]
+    px-[40px]
+    shadow-xl
+  }
 
   .photoAddOptions{
     @apply
@@ -171,5 +185,79 @@
     line-clamp-3 
     p-4
     pb-[90px]
+  }
+
+  .featuredBlogs{
+    @apply 
+    lg:col-span-8 
+    col-span-1
+    pt-[30px]
+    pb-[120px]
+    mb-8
+  }
+
+  .blogComponent{
+    @apply
+    bg-gray-800 
+    shadow-lg 
+    p-0 
+    lg:p-8 
+    pb-12
+    mb-8
+    rounded-lg
+  }
+
+  .blogSubjectImage{
+    @apply
+    object-top 
+    absolute 
+    h-80 
+    w-full 
+    object-cover 
+    shadow-lg 
+    rounded-t-lg 
+    lg:rounded-lg
+  }
+
+  .blogTitle{
+    @apply
+    transition
+    transform
+    duration-700 
+    text-center 
+    mb-8 
+    cursor-pointer
+    text-blue-400
+    hover:text-blue-200
+    text-2xl
+    font-robot-slab
+    font-semibold
+  }
+
+  .blogExcerpt{
+    @apply
+    block
+    lg:flex
+    text-center
+    items-center
+    justify-center
+    mb-8
+    w-full
+  }
+
+  .blogExLarge{
+    @apply
+    mb-4
+    lg:mb-0
+    w-full
+    lg:w-auto
+    mr-8
+  }
+
+  .postExcerptText{
+    @apply
+    px-4
+    lg:px-20
+    mb-8
   }
 }
