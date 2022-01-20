@@ -4,20 +4,18 @@ import Link from 'next/link'
 //back-end
 import { useState, useEffect } from 'react'
 
-import { getRecentPosts, getSimilarPost } from '../../../services'
+import { getRecentPosts, getSimilarPosts } from '../../../services'
 
 function BlogWidget ({ categories, slug }) {
   const [relatedPosts, setRelatedPosts] = useState([])
 
   useEffect(() => {
     if (slug) {
-      getSimilarPosts(category, slug).then(result => setRelatedPosts(result))
+      getSimilarPosts(categories, slug).then(result => setRelatedPosts(result))
     } else {
       getRecentPosts().then(result => setRelatedPosts(result))
     }
   }, [slug])
-
-  console.log('Related posts >>', relatedPosts)
 
   return (
     <div className='bg-gray-800 shadow-lg rounded-xl p-8 mb-8'>

@@ -38,7 +38,7 @@ function Blog ({ posts }) {
             ))}
           </div>
           <div className='lg:col-span-4 col-span-1'>
-            <div className='lg:sticky relative top-8'>
+            <div className='lg:sticky relative top-8 pb-[120px]'>
               <BlogWidget />
               <Categories />
             </div>

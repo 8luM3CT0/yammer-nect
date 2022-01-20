@@ -5,7 +5,6 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday'
 //back-end
 
 function BlogPost ({ post }) {
-  console.log(post)
   return (
     <div className='blogComponent'>
       <div className='relative overflow-hidden shadow-md pb-80 mb-6'>
@@ -62,7 +61,7 @@ function BlogPost ({ post }) {
         {post.excerpt}
       </p>
       <div className='text-center'>
-        <Link href={`/post/${post.slug}`}>
+        <Link href={`/blogPost/${post.slug}`}>
           <span
             className='
           transition 
