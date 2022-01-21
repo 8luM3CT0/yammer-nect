@@ -161,8 +161,12 @@
     @apply
     flex
     mx-auto
+    h-screen
     max-w-full
     xl:max-w-[1300px]
+    bg-gray-100
+    overflow-y-scroll
+    scrollbar-hide
   }
 
   .desktopDiv{
@@ -197,6 +201,10 @@
     font-normal 
     font-robot-slab 
     text-blue-400
+    px-10
+    py-8
+    overflow-y-scroll
+    scrollbar-hide
   }
 
   .postCreator{

@@ -21,8 +21,8 @@ function UserPost () {
     <div
       className='
         bg-gray-50
-        overflow-hidden
-        h-full
+          overflow-hidden
+          scrollbar-hide
         pb-[200px]
         '
     >
@@ -34,18 +34,19 @@ function UserPost () {
       <div className='postMainArea'>
         <div
           className='
-        postDiv
-        postDim 
-        bg-gray-800 
-        p-[90px] 
+        max-w-[1100px]
         mx-auto
-        rounded-lg
+        bg-gray-800
+        lg:h-[1080px]
+        h-[800px]
+        overflow-y-scroll
+        scrollbar-hide
         grid
-        z-50
-        sticky
-        top-0
-        flex-[0.5]
-        mt-6
+        grid-cols-1
+        gap-12
+        rounded-b-lg
+        px-5
+        py-3
         '
         >
           <div
@@ -72,11 +73,7 @@ function UserPost () {
               border-4 
               border-blue-300'
               />
-              <h4
-                className='postCreator'
-              >
-                {snapshot?.data().name}
-              </h4>
+              <h4 className='postCreator'>{snapshot?.data().name}</h4>
             </div>
             {snapshot?.data().timestamp ? (
               <h5
