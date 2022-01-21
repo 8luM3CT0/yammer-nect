@@ -1,6 +1,7 @@
 //front-end
 import Head from 'next/head'
 import PostHeader from '../../components/header/post-header/PostHeader'
+import moment from 'moment'
 //back-end
 import { creds, store } from '../../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
