@@ -20,7 +20,7 @@ function BlogPost ({ post }) {
     overflow-y-scroll 
     scrollbar-hide 
     bg-gray-50  
-    pb-[120px]'
+    pb-[40px]'
     >
       <Head>
         <title>Article page</title>

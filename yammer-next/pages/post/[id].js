@@ -73,11 +73,7 @@ function UserPost () {
               border-blue-300'
               />
               <h4
-                className='
-              font-semibold 
-              font-robot-slab 
-              text-lg 
-              text-blue-500'
+                className='postCreator'
               >
                 {snapshot?.data().name}
               </h4>
