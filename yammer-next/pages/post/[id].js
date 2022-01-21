@@ -134,18 +134,7 @@ function UserPost () {
           ) : (
             ' '
           )}
-          <h4
-            className='  
-          lg:text-lg
-          text-xs
-          inline
-          align-middle
-          font-normal 
-          font-robot-slab 
-          text-blue-400'
-          >
-            {snapshot?.data().post}
-          </h4>
+          <h4 className='postMainText'>{snapshot?.data().post}</h4>
         </div>
       </div>
     </div>

@@ -187,6 +187,18 @@
     pb-[90px]
   }
 
+  .postMainText{
+    @apply
+    lg:text-lg
+    text-xs
+    mt-10
+    inline
+    align-middle
+    font-normal 
+    font-robot-slab 
+    text-blue-400
+  }
+
   .featuredBlogs{
     @apply 
     lg:col-span-8 
