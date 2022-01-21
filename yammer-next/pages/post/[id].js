@@ -22,7 +22,7 @@ function UserPost () {
       className='
         bg-gray-50
         overflow-hidden
-        h-screen
+        h-full
         pb-[200px]
         '
     >
@@ -136,7 +136,8 @@ function UserPost () {
           )}
           <h4
             className='  
-          text-lg
+          lg:text-lg
+          text-xs
           inline
           align-middle
           font-normal 
