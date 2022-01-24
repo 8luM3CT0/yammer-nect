@@ -144,19 +144,6 @@
     lg:inline-flex
   }
 
-  .postDiv{
-    @apply
-    grid
-    w-screen
-    max-w-full
-    lg:max-w-6xl
-    items-center
-  }
-  .postDim{
-    @apply
-    h-full
-  }
-
   .postMainArea{
     @apply
     flex
@@ -165,8 +152,6 @@
     max-w-full
     xl:max-w-[1300px]
     bg-gray-100
-    overflow-y-scroll
-    scrollbar-hide
   }
 
   .desktopDiv{
@@ -180,17 +165,7 @@
     inline-flex
     lg:hidden
   }
-
-  .postText{
-    @apply
-    overflow-y-scroll 
-    scrollbar-hide 
-    h-[110px] 
-    line-clamp-3 
-    p-4
-    pb-[90px]
-  }
-
+  
   .postMainText{
     @apply
     lg:text-lg
@@ -297,5 +272,27 @@
     lg:grid-cols-2
     gap-4 
     mb-4
+  }
+
+  .newsMainDiv{
+    @apply
+    max-w-[1100px]
+    overflow-y-scroll
+    scrollbar-hide
+    mx-auto
+    bg-gray-100
+    h-screen  
+    grid 
+  }
+
+  .chatSidebar{
+    @apply
+    bg-gray-800
+    border-r-2
+    border-blue-400 
+    h-screen 
+    flex-1
+    lg:flex-[0.5] 
+    grid
   }
 }

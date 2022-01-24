@@ -147,6 +147,7 @@ function NewsHeader () {
               </div>
             </Button>
             <Button
+              onClick={() => router.push('/chat')}
               color='blue'
               buttonType='link'
               iconOnly={false}
@@ -247,9 +248,10 @@ function NewsHeader () {
         <ModalBody>
           <div
             className='
-                    grid 
-                    items-center 
-                    p-[40px]'
+            items-start
+            align-start
+            space-y-3 
+            p-[40px]'
           >
             <Button
               onClick={() => router.push('/')}
@@ -272,14 +274,6 @@ function NewsHeader () {
               block={false}
               rounded={false}
               ripple='light'
-            ></Button>
-            <Button
-              color='blue'
-              buttonType='link'
-              iconOnly={false}
-              block={false}
-              rounded={false}
-              ripple='light'
             >
               <div className='justify-evenly flex items-center space-x-3'>
                 <Icon name='group' />
@@ -287,6 +281,7 @@ function NewsHeader () {
               </div>
             </Button>
             <Button
+              onClick={() => router.push('/chat')}
               color='blue'
               buttonType='link'
               iconOnly={false}

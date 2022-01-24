@@ -2,6 +2,13 @@
 import Head from 'next/head'
 import PostHeader from '../../components/header/post-header/PostHeader'
 import moment from 'moment'
+import Modal from '@material-tailwind/react/Modal'
+import ModalHeader from '@material-tailwind/react/ModalHeader'
+import ModalBody from '@material-tailwind/react/ModalBody'
+import ModalFooter from '@material-tailwind/react/ModalFooter'
+import Dropdown from '@material-tailwind/react/Dropdown'
+import DropdownItem from '@material-tailwind/react/DropdownItem'
+import DropdownLink from '@material-tailwind/react/DropdownLink'
 //back-end
 import { creds, store } from '../../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
@@ -23,7 +30,6 @@ function UserPost () {
         bg-gray-50
           overflow-hidden
           scrollbar-hide
-        pb-[200px]
         '
     >
       <Head>
@@ -100,34 +106,36 @@ function UserPost () {
               </h5>
             )}
           </div>
-          {snapshot?.data().articleImage ? (
-            <img
-              src={snapshot?.data().articleImage}
-              alt=''
-              className='
-            mt-10
+          <div className='lg:h-[680px] lg:w-[890px] h-[420px] w-[640px] mx-auto'>
+            {snapshot?.data().articleImage ? (
+              <img
+                src={snapshot?.data().articleImage}
+                alt=''
+                className='
             object-top 
             rounded-xl 
             h-full
             w-full 
             relative'
-            />
-          ) : snapshot?.data().jpgWeb ? (
-            <img
-              src={snapshot?.data().jpgWeb}
-              alt=''
-              className='
-            mt-10
+              />
+            ) : snapshot?.data().jpgWeb ? (
+              <img
+                src={snapshot?.data().jpgWeb}
+                alt=''
+                className='
             object-top 
             rounded-xl 
             h-full
             w-full 
             relative'
-            />
-          ) : (
-            ' '
-          )}
-          <h4 className='postMainText'>{snapshot?.data().post}</h4>
+              />
+            ) : (
+              ' '
+            )}
+          </div>
+          <h4 className='postMainText bg-gray-600 rounded-lg'>
+            {snapshot?.data().post}
+          </h4>
         </div>
       </div>
     </div>

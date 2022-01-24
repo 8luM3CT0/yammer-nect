@@ -124,7 +124,7 @@ function Header () {
               buttonType='link'
               iconOnly={false}
               block={false}
-              rounded={true}
+              rounded={false}
               ripple='light'
             >
               <div className='grid space-y-3'>
@@ -133,11 +133,12 @@ function Header () {
               </div>
             </Button>
             <Button
+              onClick={() => router.push('/chat')}
               color='blue'
               buttonType='link'
               iconOnly={false}
               block={false}
-              rounded={true}
+              rounded={false}
               ripple='light'
             >
               <div className='grid space-y-3'>
@@ -150,7 +151,7 @@ function Header () {
               buttonType='link'
               iconOnly={false}
               block={false}
-              rounded={true}
+              rounded={false}
               ripple='light'
             >
               <div className='grid space-y-3'>
@@ -164,7 +165,7 @@ function Header () {
               buttonType='link'
               iconOnly={false}
               block={false}
-              rounded={true}
+              rounded={false}
               ripple='light'
             >
               <div className='grid space-y-3'>
@@ -178,7 +179,7 @@ function Header () {
               buttonType='link'
               iconOnly={false}
               block={false}
-              rounded={true}
+              rounded={false}
               ripple='light'
             >
               <div className='grid space-y-3'>
@@ -247,8 +248,9 @@ function Header () {
         <ModalBody>
           <div
             className='
-                    grid 
-                    items-center 
+                    items-start
+                    align-start
+                    space-y-3 
                     p-[40px]'
           >
             <Button
@@ -265,6 +267,7 @@ function Header () {
               </div>
             </Button>
             <Button
+              onClick={() => router.push('/chat')}
               color='blue'
               buttonType='link'
               iconOnly={false}
