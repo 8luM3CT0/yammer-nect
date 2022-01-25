@@ -290,9 +290,19 @@
     bg-gray-800
     border-r-2
     border-blue-400 
-    h-screen 
+    h-screen
     flex-1
     lg:flex-[0.5] 
     grid
+  }
+
+  .chatMainDiv{
+    @apply
+        flex-1 
+        h-screen 
+        overflow-hidden 
+        hidden
+        lg:grid  
+        bg-blue-400
   }
 }
