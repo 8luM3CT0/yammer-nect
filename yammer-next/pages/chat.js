@@ -1,6 +1,7 @@
 //front-end
 import Head from 'next/head'
 import { ChatHeader, ChatSidebar } from '../components'
+import Login from './login'
 //back-end
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -11,12 +12,7 @@ import { useCollection, useDocument } from 'react-firebase-hooks/firestore'
 function ChatPage () {
   const [user] = useAuthState(creds)
   const router = useRouter()
-
-  useEffect(() => {
-    if (!user) {
-      router.push('/')
-    }
-  }, [])
+  if (!user) return <Login />
 
   return (
     <div
