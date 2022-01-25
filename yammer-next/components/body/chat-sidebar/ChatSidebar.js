@@ -60,7 +60,7 @@ function ChatSidebar () {
           className='
         justify-evenly
         top-0 
-        z-50
+        sticky
         bg-blue-300 
         border-b-2 
         border-gray-800
