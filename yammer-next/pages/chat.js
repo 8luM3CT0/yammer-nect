@@ -43,12 +43,42 @@ function ChatPage () {
       '
       >
         <ChatSidebar />
-        <div className='flex-1 h-screen overflow-hidden grid  bg-blue-400'>
-          <div className='py-4 px-2 top-0 bg-gray-800 sticky z-50 flex items-center justify-between'>
-            <h2 className='text-xl font-google-sans text-blue-200 font-normal'>
+        <div
+          className='
+        flex-1 
+        h-screen 
+        overflow-hidden 
+        grid  
+        bg-blue-400'
+        >
+          <div
+            className='
+          py-4 
+          px-2 
+          top-0 
+          bg-gray-800 
+          sticky 
+          z-50 
+          flex 
+          items-center 
+          justify-between'
+          >
+            <h2
+              className='
+            text-xl 
+            font-google-sans 
+            text-blue-200 
+            font-normal'
+            >
               Chat here
             </h2>
-            <h3 className='text-lg font-google-sans font-semibold text-blue-400'>
+            <h3
+              className='
+            text-lg 
+            font-google-sans 
+            font-semibold 
+            text-blue-400'
+            >
               No one yet...
             </h3>
           </div>

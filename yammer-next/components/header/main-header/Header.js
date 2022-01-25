@@ -53,6 +53,7 @@ function Header () {
           {
             email: user.email,
             displayName: user.displayName,
+            photoURL: user.photoURL,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
           },
           { merge: true }
