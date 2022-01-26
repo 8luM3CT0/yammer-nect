@@ -31,6 +31,13 @@ function ChatFeed ({ chat, messages }) {
   const receiver = receiverSnapshot?.docs?.[0]?.data()
   const receiverDetails = getReceiver(chat.users, user)
 
+  const scrollDown = () => {
+    endRef.current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+
   const sendMessage = e => {
     e.preventDefault()
 
@@ -57,6 +64,7 @@ function ChatFeed ({ chat, messages }) {
         photoURL: user.photoURL
       })
     setMessage('')
+    scrollDown()
   }
 
   const showFeed = () => {
@@ -138,18 +146,11 @@ function ChatFeed ({ chat, messages }) {
       </header>
       <div
         className='
-    h-[90vh]
-    max-w-[1300px]
-    overflow-y-scroll
-    scrollbar-hide
-    mx-auto
-    grid
-    place-items-center
-    p-[20px]
-    bg-blue-300
+    messageFeed
 '
       >
         {showFeed()}
+        <div className='mb-[50px]' ref={endRef} />
       </div>
       <footer
         className='

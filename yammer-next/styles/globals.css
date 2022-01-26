@@ -321,4 +321,18 @@
   hover:bg-gray-800 
   rounded-3xl
   }
+
+  .messageFeed{
+    @apply
+    h-[90vh]
+    min-w-[1000px]
+    max-w-[1300px]
+    overflow-y-scroll
+    scrollbar-hide
+    mx-auto
+    grid
+    place-items-center
+    p-[20px]
+    bg-blue-300
+  }
 }
