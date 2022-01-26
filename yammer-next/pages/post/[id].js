@@ -106,7 +106,7 @@ function UserPost () {
               </h5>
             )}
           </div>
-          <div className='lg:h-[680px] lg:w-[890px] h-[310px] w-[410px] mx-auto'>
+          <div className='lg:h-[680px] lg:w-[890px] h-[290px] w-[390px] mx-auto'>
             {snapshot?.data().articleImage ? (
               <img
                 src={snapshot?.data().articleImage}
