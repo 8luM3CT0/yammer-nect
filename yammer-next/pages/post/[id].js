@@ -28,7 +28,7 @@ function UserPost () {
     <div
       className='
         bg-gray-50
-          overflow-hidden
+          overflow-y-scroll
           scrollbar-hide
         '
     >
@@ -37,7 +37,7 @@ function UserPost () {
       </Head>
 
       <PostHeader />
-      <div className='postMainArea'>
+      <div className='postMainArea pb-[90px]'>
         <div
           className='
         max-w-[1100px]
@@ -106,7 +106,7 @@ function UserPost () {
               </h5>
             )}
           </div>
-          <div className='lg:h-[680px] lg:w-[890px] h-[420px] w-[640px] mx-auto'>
+          <div className='lg:h-[680px] lg:w-[890px] h-[310px] w-[410px] mx-auto'>
             {snapshot?.data().articleImage ? (
               <img
                 src={snapshot?.data().articleImage}
