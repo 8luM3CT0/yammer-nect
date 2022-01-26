@@ -17,6 +17,7 @@ function ChatList ({ id, users }) {
 
   return (
     <div
+      onClick={() => router.push(`/chat/${id}`)}
       className='
   my-3 
   px-3 

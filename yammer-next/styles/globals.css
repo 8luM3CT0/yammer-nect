@@ -299,10 +299,26 @@
   .chatMainDiv{
     @apply
         flex-1 
-        h-screen 
+        h-screen
         overflow-hidden 
         hidden
         lg:grid  
         bg-blue-400
+  }
+
+  .messageDiv{
+    @apply
+    
+  p-8 
+  flex 
+  items-center 
+  space-x-3 
+  min-w-[228px] 
+  max-w-[320px]
+  lg:min-w-[390px]
+  lg:max-w-[580px] 
+  bg-gray-900
+  hover:bg-gray-800 
+  rounded-3xl
   }
 }

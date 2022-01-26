@@ -22,7 +22,7 @@ function ChatPage () {
   return (
     <div
       className='
-  bg-gray-100 
+  bg-gray-100
   overflow-hidden 
   scrollbar-hide'
     >
@@ -35,7 +35,7 @@ function ChatPage () {
       max-w-[1300px] 
       mx-auto
       bg-gray-50
-      h-full
+      h-screen
       border-blue-500 
       border-x-2 
       lg:flex
@@ -50,55 +50,29 @@ function ChatPage () {
         >
           <div
             className='
-          p-4
-          top-0 
-          bg-gray-800 
-          sticky 
-          z-50 
-          flex 
-          items-center 
-          justify-between'
-          >
-            <h2
-              className='
-            text-xl 
-            font-google-sans 
-            text-blue-200 
-            font-normal'
-            >
-              Chat here
-            </h2>
-            <h3
-              className='
-            text-lg 
-            font-google-sans 
-            font-semibold 
-            text-blue-400'
-            >
-              No one yet...
-            </h3>
-          </div>
-          <div
-            className='
-          h-[90vh]
+          min-h-[90vh]
+          grid
+          place-items-center
           p-[20px]
           bg-blue-300
       '
-          ></div>
-          <footer
-            className='
-          bottom-0 
-          sticky z-50 
-          py-4 
-          px-3 
-          flex 
-          justify-evenly 
-          bg-gray-800 
-          border-t-2 
-          border-blue-200'
           >
-            footer
-          </footer>
+            <div
+              className='
+            grid 
+            place-items-center
+            space-y-3 
+            p-[150px] 
+            bg-gray-800'
+            >
+              <h2 className='text-blue-200 text-xl font-robot-slab flex items-center space-x-3 font-normal'>
+                Hello there <Icon name='mood' />
+              </h2>
+              <h3 className='text-blue-500 font-google-sans font-semibold'>
+                To start chatting, talk via the sidebar
+              </h3>
+            </div>
+          </div>
         </div>
       </main>
     </div>
