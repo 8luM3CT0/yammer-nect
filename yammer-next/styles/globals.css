@@ -308,8 +308,8 @@
 
   .messageDiv{
     @apply
-    
   p-8 
+  my-16
   flex 
   items-center 
   space-x-3 

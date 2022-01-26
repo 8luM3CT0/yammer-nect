@@ -140,6 +140,8 @@ function ChatFeed ({ chat, messages }) {
         className='
     h-[90vh]
     max-w-[1300px]
+    overflow-y-scroll
+    scrollbar-hide
     mx-auto
     grid
     place-items-center
