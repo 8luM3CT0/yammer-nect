@@ -9,7 +9,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import news_endpoint from '../utils/news_endpoint'
 
 function News ({
-  top_news,
+  us_news,
   bbc_news,
   entertainment_news,
   health_news,
@@ -18,8 +18,7 @@ function News ({
   tech_news
 }) {
   const [user] = useAuthState(creds)
-  console.log(top_news.articles)
-
+  console.log(us_news.results)
   return (
     <>
       <div
@@ -46,18 +45,33 @@ function News ({
         '
         >
           <div className='relative'>
-            <div className='absolute w-full h-32 bg-gradientto-t from-gray-100 to-transparent bottom-0 z-20'>
+            <div
+              className='
+            absolute 
+            w-full
+             h-[400px] 
+             bg-gradient-to-t
+            overflow-x-scroll 
+            scrollbar-hide 
+            from-gray-100 
+            to-transparent 
+            top-0 
+            z-20'
+            >
               <Carousel
                 autoPlay
                 infiniteLoop
                 showStatus={false}
                 showIndicators={false}
                 showThumbs={false}
+                interval={5000}
               >
-                {top_news.articles.slice(0, 10).map(result => (
-                  <div>
-                    <img src={result.urlToImage} loading='lazy' alt='' />
-                  </div>
+                {us_news.results.slice(0, 10).map(news => (
+                  <NewsBanner
+                    key={news.title}
+                    title={news.title}
+                    urlToImage={news.image_url}
+                  />
                 ))}
               </Carousel>
             </div>
@@ -73,47 +87,13 @@ export default News
 export async function getServerSideProps (context) {
   const genre = context.query.title
 
-  const topUS_news = await fetch(
-    `https://newsapi.org/v2/${news_endpoint.fetchTopUSNews.url}`
+  const getUSNews = await fetch(
+    `https://newsdata.io/api/1/news?apikey=${process.env.newsdata_key}&country=us`
   ).then(res => res.json())
 
-  const bbc_news = await fetch(
-    `https://newsapi.org/v2/${news_endpoint.fetchBBCNews.url}`
-  ).then(res => res.json())
-
-  const business_news = await fetch(
-    `https://newsapi.org/v2/${news_endpoint.fetchBusinessNews.url}`
-  ).then(res => res.json())
-
-  const entertainment_news = await fetch(
-    `https://newsapi.org/v2/${news_endpoint.fetchEntertainmentNews.url}`
-  ).then(res => res.json())
-
-  const health_news = await fetch(
-    `https://newsapi.org/v2/${news_endpoint.fetchHealthNews.url}`
-  ).then(res => res.json())
-
-  const science_news = await fetch(
-    `https://newsapi.org/v2/${news_endpoint.fetchScienceNews.url}`
-  ).then(res => res.json())
-
-  const sports_news = await fetch(
-    `https://newsapi.org/v2/${news_endpoint.fetchSportsNews.url}`
-  ).then(res => res.json())
-
-  const tech_news = await fetch(
-    `https://newsapi.org/v2/${news_endpoint.fetchTechNews.url}`
-  ).then(res => res.json())
   return {
     props: {
-      top_news: topUS_news,
-      bbc_news: bbc_news,
-      business_news: business_news,
-      entertainment_news: entertainment_news,
-      health_news: health_news,
-      science_news: science_news,
-      sports_news: sports_news,
-      tech_news: tech_news
+      us_news: getUSNews
     }
   }
 }

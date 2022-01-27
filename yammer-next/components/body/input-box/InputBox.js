@@ -293,7 +293,7 @@ function InputBox () {
       )}
       <Modal size='regular' active={openPic} toggler={() => setOpenPic(false)}>
         <ModalHeader toggler={() => setOpenPic(false)}>
-          <h3
+          <p
             className='
           text-xl 
           font-robot-slab 
@@ -301,7 +301,7 @@ function InputBox () {
           text-blue-500'
           >
             Add a pic
-          </h3>
+          </p>
         </ModalHeader>
         <ModalBody>
           <div
@@ -347,7 +347,7 @@ function InputBox () {
         toggler={() => setPicFromWeb(false)}
       >
         <ModalHeader toggler={() => setPicFromWeb(false)}>
-          <h1
+          <p
             className='
           text-xl 
           text-blue-400 
@@ -356,7 +356,7 @@ function InputBox () {
           font-semibold'
           >
             Add a picture from the web
-          </h1>
+          </p>
         </ModalHeader>
         <ModalBody>
           <div className='p-[30px] grid space-y-4'>

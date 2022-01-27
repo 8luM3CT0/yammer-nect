@@ -8,20 +8,45 @@ function NewsBanner ({ result, urlToImage, title }) {
 
   return (
     <div
-      style={{
-        backgroundImage: `url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Django_logo.svg/278px-Django_logo.svg.png')`
-      }}
+      style={
+        urlToImage
+          ? { backgroundImage: `url(${urlToImage})` }
+          : {
+              backgroundImage: `url("https://www.ivycoach.com/content/uploads/2021/09/2022-US-News-College-Rankings.jpeg")`
+            }
+      }
       className='
-      absolute 
       rounded-lg 
+      cursor-pointer
       bg-center 
       bg-cover 
       bg-no-repeat 
+      grid
+      place-items-center
       shadow-md 
-      inline-block 
-      w-[710px] 
-      h-80'
-    ></div>
+      w-full
+      bg-opacity-80
+      h-[360px]
+      '
+    >
+      <div
+        className='
+      grid 
+      space-y-4 
+      place-items-center 
+      right-0 
+      bottom-0 
+      p-[30px] 
+      hover:opacity-80 
+      transition 
+      transform 
+      duration-300 '
+      >
+        <h2 className='text-2xl font-google-sans font-semibold text-orange-500 hover:animate-pulse hover:underline'>
+          {title}
+        </h2>
+      </div>
+    </div>
   )
 }
 
