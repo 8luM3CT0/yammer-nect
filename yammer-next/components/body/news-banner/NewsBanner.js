@@ -3,7 +3,7 @@ import { forwardRef } from 'react'
 //back-end
 import { useRouter } from 'next/router'
 
-function NewsBanner ({ result, urlToImage, title }) {
+function NewsBanner ({ result, urlToImage, title, creator }) {
   const router = useRouter()
 
   return (
@@ -42,8 +42,34 @@ function NewsBanner ({ result, urlToImage, title }) {
       transform 
       duration-300 '
       >
-        <h2 className='text-2xl font-google-sans font-semibold text-orange-500 hover:animate-pulse hover:underline'>
+        <h2
+          className='bottom-0 mx-auto
+        text-2xl 
+        font-google-sans 
+        font-bold 
+        px-3
+        py-2
+        grid
+        space-y-5
+        text-orange-400 
+        hover:scale-105 
+        hover:underline 
+        hover:bg-blue-200
+        transform 
+        transition 
+        duration-500 
+        ease-in-out '
+        >
           {title}
+          {creator ? (
+            <p className='text-blue-600 font-google-sans font-semibold text-xl'>
+              {creator}
+            </p>
+          ) : (
+            <p className='text-blue-600 font-google-sans font-semibold text-xl'>
+              N/A
+            </p>
+          )}
         </h2>
       </div>
     </div>
