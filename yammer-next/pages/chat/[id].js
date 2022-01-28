@@ -21,7 +21,7 @@ function MessagePage ({ chat, messages }) {
       <Head>
         <title>Chat with your person here</title>
       </Head>
-      <div className='flex-1 overflow-scroll scrollbar-hide'>
+      <div className='flex-grow overflow-scroll scrollbar-hide'>
         <ChatFeed chat={chat} messages={messages} />
       </div>
     </div>

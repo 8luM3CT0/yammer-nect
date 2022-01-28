@@ -193,9 +193,9 @@ function ChatHeader () {
               rounded={false}
               ripple='light'
             >
-              <div className='grid space-y-3'>
+              <div className='justify-evenly flex items-center space-x-3'>
                 <Icon name='home' />
-                <h2 className='routerName'>Home</h2>
+                <h2 className='optionsTitle'>Home</h2>
               </div>
             </Button>
             <Button

@@ -92,16 +92,12 @@ function ChatFeed ({ chat, messages }) {
   return (
     <div
       className='
-      flex-1
-      h-screen
-      overflow-hidden
-      grid
-      bg-blue-400
       '
     >
       <header
         className='
     p-4
+    w-full
     top-0 
     bg-gray-800 
     sticky 
@@ -160,6 +156,7 @@ function ChatFeed ({ chat, messages }) {
     py-4 
     px-3 
     flex 
+    w-full
     items-center
     justify-evenly 
     bg-gray-800 

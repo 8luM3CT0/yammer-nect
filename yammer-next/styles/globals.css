@@ -2,94 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-  .headerDiv{
-    @apply
-    top-0
+@layer components {
+  .headerDiv {
+    @apply top-0
     z-50
-    sticky
+    sticky;
   }
 
-  .appOptions{
-    @apply
-    md:hidden
+  .appOptions {
+    @apply md:hidden;
   }
 
-  .appName{
-    @apply
-    hidden 
+  .appName {
+    @apply hidden 
     lg:inline-flex 
     capitalize 
     font-robot-slab 
-    text-2xl
+    text-2xl;
   }
 
-  .centerDiv{
-    @apply
-    hidden 
+  .centerDiv {
+    @apply hidden 
     md:flex 
     items-center 
-    space-x-5 
+    space-x-5;
   }
 
-  .mainDim{
-    @apply
-    max-w-[540px]
+  .mainDim {
+    @apply max-w-[540px]
     md:max-w-[1080px]
-    lg:max-w-[1300px]
+    lg:max-w-[1300px];
   }
 
-  .routerName{
-    @apply
-    hidden
+  .routerName {
+    @apply hidden
     lg:inline-flex
     capitalize 
     text-lg 
     font-font-robot 
     text-blue-500 
-    font-normal
+    font-normal;
   }
 
-  .optionsTitle{
-    @apply
-    capitalize 
+  .optionsTitle {
+    @apply capitalize 
     text-lg 
     font-font-robot 
     text-blue-500 
-    font-normal
+    font-normal;
   }
 
-
-  .mainDiv{
-    @apply
-    h-screen
+  .mainDiv {
+    @apply h-screen
     grid
     md:flex
     mx-auto
     xl:max-w-[1500px]
-    bg-gray-100
+    bg-gray-100;
   }
 
-  .inputBox{
-    @apply
-    grid
+  .inputBox {
+    @apply grid
     lg:flex
     w-full
     lg:w-screen
     max-w-6xl
-    items-center
+    items-center;
   }
 
-  .inputDim{
-    @apply 
-    h-[226px] 
+  .inputDim {
+    @apply h-[226px] 
     md:h-[290px] 
-    lg:h-[390px]
+    lg:h-[390px];
   }
-  
-  .inputDivAdd{
-    @apply
-    bg-gray-800
+
+  .inputDivAdd {
+    @apply bg-gray-800
     border-b-4
     border-blue-400
     rounded-lg 
@@ -98,26 +86,23 @@
     z-50
     py-[20px]
     px-[40px]
-    shadow-xl
+    shadow-xl;
   }
 
-  .photoAddOptions{
-    @apply
-    hidden
-    lg:grid
+  .photoAddOptions {
+    @apply hidden
+    lg:grid;
   }
 
-  .mobilePhotoAdd{
-    @apply
-    flex
+  .mobilePhotoAdd {
+    @apply flex
     items-center
     justify-evenly
-    lg:hidden
+    lg:hidden;
   }
 
-  .articleDiv{
-    @apply
-    bg-gray-800
+  .articleDiv {
+    @apply bg-gray-800
     grid
     max-w-md
     lg:max-w-4xl
@@ -128,47 +113,40 @@
     lg:justify-evenly
     px-10
     py-4
-    space-y-4
+    space-y-4;
   }
 
-
-  .userName{
-    @apply
-    hidden
-    md:inline-flex
+  .userName {
+    @apply hidden
+    md:inline-flex;
   }
 
-  .jpgDisplay{
-    @apply
-    hidden
-    lg:inline-flex
+  .jpgDisplay {
+    @apply hidden
+    lg:inline-flex;
   }
 
-  .postMainArea{
-    @apply
-    flex
+  .postMainArea {
+    @apply flex
     mx-auto
     h-screen
     max-w-full
     xl:max-w-[1300px]
-    bg-gray-100
+    bg-gray-100;
   }
 
-  .desktopDiv{
-    @apply
-    hidden
-    lg:inline-flex
+  .desktopDiv {
+    @apply hidden
+    lg:inline-flex;
   }
 
-  .mobileDiv{
-    @apply
-    inline-flex
-    lg:hidden
+  .mobileDiv {
+    @apply inline-flex
+    lg:hidden;
   }
-  
-  .postMainText{
-    @apply
-    lg:text-lg
+
+  .postMainText {
+    @apply lg:text-lg
     text-sm
     mt-10
     inline
@@ -179,53 +157,48 @@
     px-10
     py-8
     overflow-y-scroll
-    scrollbar-hide
+    scrollbar-hide;
   }
 
-  .postCreator{
-    @apply
-    font-semibold 
+  .postCreator {
+    @apply font-semibold 
     font-robot-slab 
     text-base
     lg:text-lg 
-    text-blue-500
+    text-blue-500;
   }
 
-  .featuredBlogs{
-    @apply 
-    lg:col-span-8 
+  .featuredBlogs {
+    @apply lg:col-span-8 
     col-span-1
     pt-[30px]
     pb-[120px]
-    mb-8
+    mb-8;
   }
 
-  .blogComponent{
-    @apply
-    bg-gray-800 
+  .blogComponent {
+    @apply bg-gray-800 
     shadow-lg 
     p-0 
     lg:p-8 
     pb-12
     mb-8
-    rounded-lg
+    rounded-lg;
   }
 
-  .blogSubjectImage{
-    @apply
-    object-top 
+  .blogSubjectImage {
+    @apply object-top 
     absolute 
     h-80 
     w-full 
     object-cover 
     shadow-lg 
     rounded-t-lg 
-    lg:rounded-lg
+    lg:rounded-lg;
   }
 
-  .blogTitle{
-    @apply
-    transition
+  .blogTitle {
+    @apply transition
     transform
     duration-700 
     text-center 
@@ -235,80 +208,72 @@
     hover:text-blue-200
     text-2xl
     font-robot-slab
-    font-semibold
+    font-semibold;
   }
 
-  .blogExcerpt{
-    @apply
-    block
+  .blogExcerpt {
+    @apply block
     lg:flex
     text-center
     items-center
     justify-center
     mb-8
-    w-full
+    w-full;
   }
 
-  .blogExLarge{
-    @apply
-    mb-4
+  .blogExLarge {
+    @apply mb-4
     lg:mb-0
     w-full
     lg:w-auto
-    mr-8
+    mr-8;
   }
 
-  .postExcerptText{
-    @apply
-    px-4
+  .postExcerptText {
+    @apply px-4
     lg:px-20
-    mb-8
+    mb-8;
   }
 
-  .commentsInput{
-    @apply
-    grid 
+  .commentsInput {
+    @apply grid 
     grid-cols-1 
     lg:grid-cols-2
     gap-4 
-    mb-4
+    mb-4;
   }
 
-  .newsMainDiv{
-    @apply
-    max-w-[1100px]
+  .newsMainDiv {
+    @apply max-w-[1100px]
     overflow-y-scroll
     scrollbar-hide
     mx-auto
     bg-gray-100
     h-screen  
-    grid 
+    grid;
   }
 
-  .chatSidebar{
-    @apply
-    bg-gray-800
+  .chatSidebar {
+    @apply bg-gray-800
     border-r-2
     border-blue-400 
     h-screen
     flex-1
     lg:flex-[0.5] 
-    grid
+    grid;
   }
 
-  .chatMainDiv{
-    @apply
-        flex-1 
+  .chatMainDiv {
+    @apply flex-1 
         h-screen
         overflow-hidden 
         hidden
         lg:grid  
-        bg-blue-400
+        bg-blue-400;
   }
 
-  .messageDiv{
-    @apply
-  p-8 
+  .messageDiv {
+    @apply p-8 
   my-16
   flex 
   items-center 
@@ -319,20 +284,18 @@
   lg:max-w-[580px] 
   bg-gray-900
   hover:bg-gray-800 
-  rounded-3xl
+  rounded-3xl;
   }
 
-  .messageFeed{
-    @apply
-    h-[90vh]
-    min-w-[1000px]
-    max-w-[1300px]
+  .messageFeed {
+    @apply h-[90vh]
+    w-full
     overflow-y-scroll
     scrollbar-hide
     mx-auto
     grid
     place-items-center
     p-[20px]
-    bg-blue-300
+    bg-blue-300;
   }
 }
