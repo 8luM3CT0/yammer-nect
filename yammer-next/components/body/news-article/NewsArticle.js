@@ -41,10 +41,10 @@ function NewsArticle ({ title, imageUrl, creator, excerpt }) {
         />
       )}
       <div className='flex flex-col text-center items-center text-orange-400'>
-        <h1 className='text-lg lg:text-[32px] font-google-sans font-semibold'>
+        <h1 className='text-lg font-google-sans font-semibold'>
           {title}
         </h1>
-        <h2 className='text-base lg:text-lg font-robot-slab font-semibold text-blue-400'>
+        <h2 className='text-base font-robot-slab font-semibold text-blue-400'>
           by {creator}
         </h2>
         <p className='articleExcerpt'>{excerpt}</p>
