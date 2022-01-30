@@ -324,6 +324,7 @@
     @apply
     hidden
     lg:inline-flex
+    px-4
     text-base
     font-robot-condensed
     w-[300px]

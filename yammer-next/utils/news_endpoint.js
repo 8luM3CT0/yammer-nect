@@ -11,6 +11,10 @@ export default {
         title: 'US Business News',
         url: '/api/1/news?apikey=pub_3948c45355202855c2e81dd9c6bf385d8045&category=business&country=us'
     },
+    fetchUSEntertainment:{
+        title: 'US Entertainment News',
+        url: '/api/1/news?apikey=pub_3948c45355202855c2e81dd9c6bf385d8045&category=entertainment&country=us'
+    },
     fetchUSEnvironmentNews: {
         title: 'US Environment News',
         url: '/api/1/news?apikey=pub_3948c45355202855c2e81dd9c6bf385d8045&category=environment&country=us'

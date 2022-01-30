@@ -19,6 +19,7 @@ function News ({
   us_news,
   tech_news,
   business_news,
+  entertainment_news,
   environment_news,
   food_news,
   health_news,
@@ -28,7 +29,6 @@ function News ({
   world_news
 }) {
   const [user] = useAuthState(creds)
-  console.log(business_news.results)
   const [openTab, setOpenTab] = useState(1)
 
   return (
@@ -216,7 +216,7 @@ function News ({
               </div>
             </TabList>
             <TabContent>
-              <div className='mx-auto overflow-y-scroll scrollbar-hide h-[500px]'>
+              <div className='mx-auto overflow-y-scroll scrollbar-hide h-[800px]'>
                 <TabPane active={openTab === 1 ? true : false}>
                   <div
                     className='
@@ -246,7 +246,7 @@ function News ({
                   mx-auto 
                   space-y-4'
                   >
-                    {business_news.results.map(doc => (
+                    {entertainment_news.results.map(doc => (
                       <NewsArticle
                         key={doc.title}
                         title={doc.title}
@@ -266,7 +266,7 @@ function News ({
                   mx-auto 
                   space-y-4'
                   >
-                    {business_news.results.map(doc => (
+                    {environment_news.results.map(doc => (
                       <NewsArticle
                         key={doc.title}
                         title={doc.title}
@@ -286,7 +286,7 @@ function News ({
                   mx-auto 
                   space-y-4'
                   >
-                    {business_news.results.map(doc => (
+                    {food_news.results.map(doc => (
                       <NewsArticle
                         key={doc.title}
                         title={doc.title}
@@ -306,7 +306,7 @@ function News ({
                   mx-auto 
                   space-y-4'
                   >
-                    {business_news.results.map(doc => (
+                    {health_news.results.map(doc => (
                       <NewsArticle
                         key={doc.title}
                         title={doc.title}
@@ -326,7 +326,7 @@ function News ({
                   mx-auto 
                   space-y-4'
                   >
-                    {business_news.results.map(doc => (
+                    {politics_news.results.map(doc => (
                       <NewsArticle
                         key={doc.title}
                         title={doc.title}
@@ -346,7 +346,7 @@ function News ({
                   mx-auto 
                   space-y-4'
                   >
-                    {business_news.results.map(doc => (
+                    {science_news.results.map(doc => (
                       <NewsArticle
                         key={doc.title}
                         title={doc.title}
@@ -366,7 +366,7 @@ function News ({
                   mx-auto 
                   space-y-4'
                   >
-                    {business_news.results.map(doc => (
+                    {sports_news.results.map(doc => (
                       <NewsArticle
                         key={doc.title}
                         title={doc.title}
@@ -386,7 +386,7 @@ function News ({
                   mx-auto 
                   space-y-4'
                   >
-                    {business_news.results.map(doc => (
+                    {tech_news.results.map(doc => (
                       <NewsArticle
                         key={doc.title}
                         title={doc.title}
@@ -406,7 +406,7 @@ function News ({
                   mx-auto 
                   space-y-4'
                   >
-                    {business_news.results.map(doc => (
+                    {world_news.results.map(doc => (
                       <NewsArticle
                         key={doc.title}
                         title={doc.title}
@@ -444,6 +444,10 @@ export async function getServerSideProps (context) {
     `https://newsdata.io${news_endpoint.fetchUSTechNews.url}`
   ).then(res => res.json())
 
+  const getEntertainment = await fetch(
+    `https://newsdata.io${news_endpoint.fetchUSEntertainment.url}`
+  ).then(res => res.json())
+
   const getEnvironmentNews = await fetch(
     `https://newsdata.io${news_endpoint.fetchUSEnvironmentNews.url}`
   ).then(res => res.json())
@@ -477,6 +481,7 @@ export async function getServerSideProps (context) {
       us_news: getTopNews,
       tech_news: getTechNews,
       business_news: getBusinessNews,
+      entertainment_news: getEntertainment,
       environment_news: getEnvironmentNews,
       food_news: getFoodNews,
       health_news: getHealthNews,
