@@ -298,4 +298,42 @@
     p-[20px]
     bg-blue-300;
   }
+
+  .newsArticleDiv{
+    @apply
+    bg-gray-800
+    hover:bg-blue-300
+    grid
+    lg:flex
+    justify-center
+    mx-auto
+    rounded-lg
+    lg:items-center
+    lg:justify-evenly
+    px-10
+    py-7
+    space-y-4
+    hover:scale-105
+    transform
+    transition
+    ease-in-out
+    cursor-pointer
+  }
+
+  .articleExcerpt{
+    @apply
+    hidden
+    lg:inline-flex
+    text-base
+    font-robot-condensed
+    w-[300px]
+    lg:w-[600px]
+    h-[40px]
+    lg:h-[270px]
+    line-clamp-3
+    text-ellipsis
+    overflow-hidden
+    font-semibold
+    text-gray-100
+  }
 }
