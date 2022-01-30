@@ -324,16 +324,20 @@
     @apply
     hidden
     lg:inline-flex
+    w-[210px]
+    lg:w-[400px]
+    h-[70px]
+    lg:h-[160px]
     px-4
-    text-base
-    font-robot-condensed
-    w-[300px]
-    lg:w-[600px]
-    h-[40px]
-    lg:h-[270px]
     line-clamp-3
     text-ellipsis
     overflow-hidden
+  }
+
+  .articleExcerpt{
+    @apply
+    text-base
+    font-robot-condensed
     font-semibold
     text-gray-100
   }

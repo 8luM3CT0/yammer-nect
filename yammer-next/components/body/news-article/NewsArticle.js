@@ -15,8 +15,8 @@ function NewsArticle ({ title, imageUrl, creator, excerpt }) {
           alt=''
           className='
       rounded-xl
-      h-[190px]
-      w-[290px]
+      h-[130px]
+      w-[190px]
       lg:h-[210px]
       lg:w-[330px]
       xl:h-[240px]
@@ -30,8 +30,8 @@ function NewsArticle ({ title, imageUrl, creator, excerpt }) {
           alt=''
           className='
         rounded-xl
-        h-[190px]
-        w-[290px]
+        h-[130px]
+        w-[190px]
         lg:h-[210px]
         lg:w-[330px]
         xl:h-[240px]
@@ -51,7 +51,9 @@ function NewsArticle ({ title, imageUrl, creator, excerpt }) {
         ) : (
           ' '
         )}
-        <p className='articleExcerpt'>{excerpt}</p>
+        <div className='articleExcerptDiv'>
+          <p className='articleExcerpt'>{excerpt}</p>
+        </div>
       </div>
     </div>
   )
