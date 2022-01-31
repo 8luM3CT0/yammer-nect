@@ -288,7 +288,8 @@
   }
 
   .messageFeed {
-    @apply h-[90vh]
+    @apply 
+    h-[90vh]
     w-full
     overflow-y-scroll
     scrollbar-hide
@@ -312,12 +313,22 @@
     lg:justify-evenly
     px-10
     py-7
-    space-y-4
+    space-y-5
     hover:scale-105
     transform
     transition
     ease-in-out
     cursor-pointer
+  }
+
+  .newsArticleTitle{
+    @apply
+    text-lg 
+    w-[110px] 
+    lg:w-[580px] 
+    overflow-hidden  
+    font-google-sans 
+    font-semibold
   }
 
   .articleExcerpt{
@@ -334,11 +345,30 @@
     overflow-hidden
   }
 
+  .articleAuthor{
+    @apply
+    text-base 
+    font-robot-slab 
+    font-semibold 
+    text-blue-400
+  }
+
   .articleExcerpt{
     @apply
     text-base
     font-robot-condensed
     font-semibold
     text-gray-100
+  }
+  
+  .modalNewsDiv{
+    @apply
+    grid
+    justify-center
+    place-items-center
+    px-[30px] 
+    py-[60px] 
+    lg:px-[90px] 
+    lg:py-[120px]
   }
 }

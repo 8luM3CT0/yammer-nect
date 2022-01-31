@@ -62,7 +62,7 @@ function PostHeader () {
 
   return (
     <>
-      <div className='headerDiv'>
+      <header className='headerDiv'>
         <div
           className='
             bg-gray-800
@@ -158,7 +158,7 @@ function PostHeader () {
             </Button>
           )}
         </div>
-      </div>
+      </header>
       <Modal
         size='lg'
         active={showOptions}

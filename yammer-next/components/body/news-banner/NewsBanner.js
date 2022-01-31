@@ -66,9 +66,7 @@ function NewsBanner ({ result, urlToImage, title, creator }) {
               {creator}
             </p>
           ) : (
-            <p className='text-blue-600 font-google-sans font-semibold text-xl'>
-              N/A
-            </p>
+            ' '
           )}
         </h2>
       </div>

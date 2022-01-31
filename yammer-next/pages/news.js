@@ -233,6 +233,8 @@ function News ({
                         imageUrl={doc.image_url}
                         creator={doc.creator}
                         excerpt={doc.description}
+                        fullDescription={doc.full_description}
+                        content={doc.content}
                       />
                     ))}
                   </div>
@@ -253,6 +255,8 @@ function News ({
                         imageUrl={doc.image_url}
                         creator={doc.creator}
                         excerpt={doc.description}
+                        fullDescription={doc.full_description}
+                        content={doc.content}
                       />
                     ))}
                   </div>
@@ -273,6 +277,8 @@ function News ({
                         imageUrl={doc.image_url}
                         creator={doc.creator}
                         excerpt={doc.description}
+                        fullDescription={doc.full_description}
+                        content={doc.content}
                       />
                     ))}
                   </div>
@@ -293,6 +299,8 @@ function News ({
                         imageUrl={doc.image_url}
                         creator={doc.creator}
                         excerpt={doc.description}
+                        fullDescription={doc.full_description}
+                        content={doc.content}
                       />
                     ))}
                   </div>
@@ -313,6 +321,8 @@ function News ({
                         imageUrl={doc.image_url}
                         creator={doc.creator}
                         excerpt={doc.description}
+                        fullDescription={doc.full_description}
+                        content={doc.content}
                       />
                     ))}
                   </div>
@@ -333,6 +343,8 @@ function News ({
                         imageUrl={doc.image_url}
                         creator={doc.creator}
                         excerpt={doc.description}
+                        fullDescription={doc.full_description}
+                        content={doc.content}
                       />
                     ))}
                   </div>
@@ -353,6 +365,8 @@ function News ({
                         imageUrl={doc.image_url}
                         creator={doc.creator}
                         excerpt={doc.description}
+                        fullDescription={doc.full_description}
+                        content={doc.content}
                       />
                     ))}
                   </div>
@@ -373,6 +387,8 @@ function News ({
                         imageUrl={doc.image_url}
                         creator={doc.creator}
                         excerpt={doc.description}
+                        fullDescription={doc.full_description}
+                        content={doc.content}
                       />
                     ))}
                   </div>
@@ -393,6 +409,8 @@ function News ({
                         imageUrl={doc.image_url}
                         creator={doc.creator}
                         excerpt={doc.description}
+                        fullDescription={doc.full_description}
+                        content={doc.content}
                       />
                     ))}
                   </div>
@@ -413,6 +431,8 @@ function News ({
                         imageUrl={doc.image_url}
                         creator={doc.creator}
                         excerpt={doc.description}
+                        fullDescription={doc.full_description}
+                        content={doc.content}
                       />
                     ))}
                   </div>
