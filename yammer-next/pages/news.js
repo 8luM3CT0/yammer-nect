@@ -54,6 +54,7 @@ function News ({
             px-10
             mx-auto
             bg-gray-50
+            pb-[90px]
         '
         >
           {/**header news */}
@@ -84,6 +85,8 @@ function News ({
                     title={news.title}
                     urlToImage={news.image_url}
                     creator={news.creator}
+                    content={news.content}
+                    fullDescription={news.full_description}
                   />
                 ))}
               </Carousel>

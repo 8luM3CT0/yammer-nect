@@ -371,4 +371,14 @@
     lg:px-[90px] 
     lg:py-[120px]
   }
+
+  .newsModalTitle{
+    @apply
+    text-orange-300 
+    xl:text-2xl
+    text-lg 
+    font-robot-slab 
+    font-semibold
+    px-8
+  }
 }

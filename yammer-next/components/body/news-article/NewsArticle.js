@@ -82,16 +82,7 @@ function NewsArticle ({
         toggler={() => setShowNews(false)}
       >
         <ModalHeader toggler={() => setShowNews(false)}>
-          <h3
-            className='
-          text-orange-300 
-          text-lg 
-          font-robot-slab 
-          font-semibold
-          px-8'
-          >
-            {title}
-          </h3>
+          <h3 className='newsModalTitle'>{title}</h3>
         </ModalHeader>
         <ModalBody>
           <div
