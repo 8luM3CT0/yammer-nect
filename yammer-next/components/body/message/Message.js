@@ -5,14 +5,19 @@ import { creds } from '../../../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
 function Message ({ user, message }) {
-  const [useLoggedIn] = useAuthState(creds)
+  const [userLoggedIn] = useAuthState(creds)
 
   return (
     <div className='messageDiv'>
       <img
         src={message?.photoURL}
         alt=''
-        className='lg:h-12 h-8 rounded-3xl border border-blue-300'
+        className='
+        lg:h-12 
+        h-8 
+        rounded-3xl 
+        border 
+        border-blue-300'
       />
       <div className='space-y-3'>
         <div className='flex items-center space-x-3'>

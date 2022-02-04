@@ -148,6 +148,7 @@ function Header () {
               </div>
             </Button>
             <Button
+              onClick={() => router.push('/finance')}
               color='blue'
               buttonType='link'
               iconOnly={false}
@@ -157,7 +158,7 @@ function Header () {
             >
               <div className='grid space-y-3'>
                 <Icon name='monetization_on' />
-                <h2 className='routerName'>Crypto</h2>
+                <h2 className='routerName'>Finance</h2>
               </div>
             </Button>
             <Button
@@ -282,6 +283,7 @@ function Header () {
               </div>
             </Button>
             <Button
+              onClick={() => router.push('/finance')}
               color='blue'
               buttonType='link'
               iconOnly={false}
@@ -291,7 +293,7 @@ function Header () {
             >
               <div className='justify-evenly flex items-center space-x-3'>
                 <Icon name='monetization_on' />
-                <h2 className='optionsTitle'>Crypto</h2>
+                <h2 className='optionsTitle'>Finance</h2>
               </div>
             </Button>
             <Button

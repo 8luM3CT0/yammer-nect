@@ -1,10 +1,12 @@
 //front-end
-import Button from '@material-tailwind/react/Button'
-import Icon from '@material-tailwind/react/Icon'
-import Modal from '@material-tailwind/react/Modal'
-import ModalHeader from '@material-tailwind/react/ModalHeader'
-import ModalBody from '@material-tailwind/react/ModalBody'
-import ModalFooter from '@material-tailwind/react/ModalFooter'
+import {
+  Button,
+  Icon,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+} from '../../index'
 //back-end
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -12,7 +14,7 @@ import { creds, store, provider } from '../../../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import firebase from 'firebase'
 
-function BlogHeader () {
+function FinanceHeader () {
   const [user] = useAuthState(creds)
   const router = useRouter()
   const [showOptions, setShowOptions] = useState(false)
@@ -53,6 +55,7 @@ function BlogHeader () {
           {
             email: user.email,
             displayName: user.displayName,
+            photoURL: user.photoURL,
             timestamp: firebase.firestore.FieldValue.serverTimestamp()
           },
           { merge: true }
@@ -113,8 +116,8 @@ function BlogHeader () {
               ripple='dark'
               className='space-x-3'
             >
-              <Icon name='rate_review' />
-              <h2 className='appName'>Blog</h2>
+              <Icon name='monetization_on' />
+              <h2 className='appName'>Finance</h2>
             </Button>
           </div>
           {/**header center /routers */}
@@ -160,19 +163,7 @@ function BlogHeader () {
                 <h2 className='routerName'>Chat</h2>
               </div>
             </Button>
-            <Button
-              color='blue'
-              buttonType='link'
-              iconOnly={false}
-              block={false}
-              rounded={false}
-              ripple='light'
-            >
-              <div className='grid space-y-3'>
-                <Icon name='monetization_on' />
-                <h2 className='routerName'>Finance</h2>
-              </div>
-            </Button>
+
             <Button
               onClick={() => router.push('/news')}
               color='blue'
@@ -185,6 +176,20 @@ function BlogHeader () {
               <div className='grid space-y-3'>
                 <Icon name='newspaper' />
                 <h2 className='routerName'>News</h2>
+              </div>
+            </Button>
+            <Button
+              onClick={() => router.push('/blog')}
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <div className='grid space-y-3'>
+                <Icon name='rate_review' />
+                <h2 className='routerName'>Blogs</h2>
               </div>
             </Button>
           </div>
@@ -247,11 +252,11 @@ function BlogHeader () {
         <ModalHeader toggler={() => setShowOptions(false)}>Options</ModalHeader>
         <ModalBody>
           <div
-            className='                    
-            items-start
-            align-start
-            space-y-3 
-            p-[40px]'
+            className='
+                    items-start
+                    align-start
+                    space-y-3 
+                    p-[40px]'
           >
             <Button
               onClick={() => router.push('/')}
@@ -262,9 +267,9 @@ function BlogHeader () {
               rounded={false}
               ripple='light'
             >
-              <div className='grid space-y-3'>
-                <Icon name='home' />
-                <h2 className='routerName'>Home</h2>
+              <div className='justify-evenly flex items-center space-x-3'>
+                <Icon name='monetization_on' />
+                <h2 className='optionsTitle'>Home</h2>
               </div>
             </Button>
             <Button
@@ -295,19 +300,6 @@ function BlogHeader () {
               </div>
             </Button>
             <Button
-              color='blue'
-              buttonType='link'
-              iconOnly={false}
-              block={false}
-              rounded={false}
-              ripple='light'
-            >
-              <div className='justify-evenly flex items-center space-x-3'>
-                <Icon name='monetization_on' />
-                <h2 className='optionsTitle'>Finance</h2>
-              </div>
-            </Button>
-            <Button
               onClick={() => router.push('/news')}
               color='blue'
               buttonType='link'
@@ -319,6 +311,20 @@ function BlogHeader () {
               <div className='justify-evenly flex items-center space-x-3'>
                 <Icon name='newspaper' />
                 <h2 className='optionsTitle'>News</h2>
+              </div>
+            </Button>
+            <Button
+              onClick={() => router.push('/blog')}
+              color='blue'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              <div className='justify-evenly flex items-center space-x-3'>
+                <Icon name='rate_review' />
+                <h2 className='optionsTitle'>Blogs</h2>
               </div>
             </Button>
           </div>
@@ -449,4 +455,4 @@ function BlogHeader () {
   )
 }
 
-export default BlogHeader
+export default FinanceHeader

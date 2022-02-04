@@ -1,6 +1,12 @@
 //front-end
 import Head from 'next/head'
-import { NewsHeader, NewsBanner, NewsArticle } from '../components'
+import {
+  NewsHeader,
+  NewsBanner,
+  NewsArticle,
+  BlogWidget,
+  Categories
+} from '../components'
 import { Carousel } from 'react-responsive-carousel'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import Tab from '@material-tailwind/react/Tab'
@@ -58,7 +64,7 @@ function News ({
         '
         >
           {/**header news */}
-          <div className='top-0 sticky'>
+          <div className='top-0'>
             <div
               className='
             w-full
@@ -68,8 +74,7 @@ function News ({
             scrollbar-hide 
             from-gray-100 
             to-transparent 
-            top-0 
-            z-20'
+            '
             >
               <Carousel
                 autoPlay
@@ -95,7 +100,15 @@ function News ({
           {/**end of header news */}
           <Tab>
             <TabList color='blue'>
-              <div className='mx-auto space-x-20 overflow-x-scroll scrollbar-hide flex items-center'>
+              <div
+                className='
+                mx-auto 
+                space-x-20 
+                overflow-x-scroll
+                scrollbar-hide 
+                flex 
+                items-center'
+              >
                 <TabItem
                   onClick={e => {
                     e.preventDefault()
@@ -219,7 +232,13 @@ function News ({
               </div>
             </TabList>
             <TabContent>
-              <div className='mx-auto overflow-y-scroll scrollbar-hide h-[800px]'>
+              <div
+                className='
+              mx-auto 
+              overflow-y-scroll 
+              scrollbar-hide 
+              h-[800px] '
+              >
                 <TabPane active={openTab === 1 ? true : false}>
                   <div
                     className='
@@ -464,7 +483,7 @@ export async function getServerSideProps (context) {
   ).then(res => res.json())
 
   const getBusinessNews = await fetch(
-    `https://newsdata.io${news_endpoint.fetchUSTechNews.url}`
+    `https://newsdata.io${news_endpoint.fetchUSBusinessNews.url}`
   ).then(res => res.json())
 
   const getEntertainment = await fetch(
