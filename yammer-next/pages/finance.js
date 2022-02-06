@@ -5,10 +5,10 @@ import { Button, Icon, FinanceHeader, MarketNews } from '../components'
 import { creds, store, provider } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 
-function Finance ({ finnhub_news }) {
+function Finance ({ finnhub_news, finnhub_stocks }) {
   const [user] = useAuthState(creds)
 
-  console.log(finnhub_news)
+  console.log(finnhub_stocks)
 
   return (
     <div
@@ -53,7 +53,19 @@ function Finance ({ finnhub_news }) {
       border-blue-500
       '
       >
-        finance page
+        {finnhub_stocks.slice(0, 1000).map(stock => (
+          <h2
+            className='
+          text-sm 
+          flex 
+          text-center 
+          capitalize 
+          font-robot-slab 
+          font-semibold'
+          >
+            {stock.symbol} - {stock.description} - {stock.type}
+          </h2>
+        ))}
       </main>
     </div>
   )
@@ -63,12 +75,17 @@ export default Finance
 
 export async function getServerSideProps () {
   const marketNews = await fetch(
-    'https://finnhub.io/api/v1/news?category=general&token=c7sueuaad3i9jn7rmb70'
+    `https://finnhub.io/api/v1/news?category=general&token=${process.env.finnhub_key}`
+  ).then(res => res.json())
+
+  const marketStockSymbols = await fetch(
+    `https://finnhub.io/api/v1/stock/symbol?exchange=US&token=${process.env.finnhub_key}`
   ).then(res => res.json())
 
   return {
     props: {
-      finnhub_news: marketNews
+      finnhub_news: marketNews,
+      finnhub_stocks: marketStockSymbols
     }
   }
 }
