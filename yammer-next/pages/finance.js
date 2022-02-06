@@ -8,8 +8,6 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 function Finance ({ finnhub_news, finnhub_stocks }) {
   const [user] = useAuthState(creds)
 
-  console.log(finnhub_stocks)
-
   return (
     <div
       className='
@@ -53,7 +51,7 @@ function Finance ({ finnhub_news, finnhub_stocks }) {
       border-blue-500
       '
       >
-        {finnhub_stocks.slice(0, 300).map(stock => (
+        {finnhub_stocks.slice(0, 100).map(stock => (
           <h2
             className='
           text-sm 
