@@ -1,5 +1,4 @@
 //front-end
-import { forwardRef } from 'react'
 import {
   Modal,
   ModalBody,
@@ -12,14 +11,7 @@ import {
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-function NewsBanner ({
-  result,
-  urlToImage,
-  title,
-  creator,
-  content,
-  fullDescription
-}) {
+function NewsBanner ({ urlToImage, title, creator, content, fullDescription }) {
   const router = useRouter()
   const [showNews, setShowNews] = useState(false)
 

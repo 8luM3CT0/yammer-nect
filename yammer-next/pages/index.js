@@ -1,17 +1,16 @@
 //front-end
 import Head from 'next/head'
-import { Header, InputBox, Article } from '../components'
-import Button from '@material-tailwind/react/Button'
-import Icon from '@material-tailwind/react/Icon'
-import Modal from '@material-tailwind/react/Modal'
-import ModalHeader from '@material-tailwind/react/ModalHeader'
-import ModalBody from '@material-tailwind/react/ModalBody'
-import ModalFooter from '@material-tailwind/react/ModalFooter'
-import Tab from '@material-tailwind/react/Tab'
-import TabList from '@material-tailwind/react/TabList'
-import TabItem from '@material-tailwind/react/TabItem'
-import TabContent from '@material-tailwind/react/TabContent'
-import TabPane from '@material-tailwind/react/TabPane'
+import {
+  Header,
+  InputBox,
+  Article,
+  Button,
+  Icon,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  ModalFooter
+} from '../components'
 //back-end
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -47,24 +46,37 @@ export default function Home () {
       border-x-2
       border-blue-400 
       bg-gray-50 
-      pb-[120px] 
+      pb-56
       mx-auto
       space-y-3'
         >
           {/**input box */}
           <InputBox />
-          {articleSnapshot?.docs.map(doc => (
-            <Article
-              key={doc.id}
-              id={doc.id}
-              name={doc.data().name}
-              post={doc.data().post}
-              articleImage={doc.data().articleImage}
-              jpgWeb={doc.data().jpgWeb}
-              photoURL={doc.data().photoURL}
-              timestamp={doc.data().timestamp}
-            />
-          ))}
+          {articleSnapshot ? (
+            articleSnapshot?.docs.map(doc => (
+              <Article
+                key={doc.id}
+                id={doc.id}
+                name={doc.data().name}
+                post={doc.data().post}
+                articleImage={doc.data().articleImage}
+                jpgWeb={doc.data().jpgWeb}
+                photoURL={doc.data().photoURL}
+                timestamp={doc.data().timestamp}
+              />
+            ))
+          ) : (
+            <h2
+              className='
+            text-xl 
+            mx-auto 
+            font-robot-slab 
+            font-semibold 
+            text-blue-400'
+            >
+              Hm. Nothing here. Try posting something
+            </h2>
+          )}
         </main>
         {/**news widget */}
       </div>

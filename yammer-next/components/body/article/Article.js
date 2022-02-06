@@ -1,6 +1,5 @@
 //front-end
-import Button from '@material-tailwind/react/Button'
-import Icon from '@material-tailwind/react/Icon'
+import { Button, Icon, Dropdown, DropdownItem, DropdownLink } from '../../index'
 //back-end
 import { forwardRef } from 'react'
 import { useRouter } from 'next/router'
@@ -22,10 +21,7 @@ function Article ({
   }
 
   return (
-    <div
-      onClick={goToPost}
-      className='articleDiv cursor-pointer hover:bg-gray-600 transition transform duration-400 ease-in-out'
-    >
+    <div className='articleDiv'>
       <div
         className='
             w-full 
@@ -59,29 +55,54 @@ function Article ({
             {name}
           </h4>
         </div>
-        {timestamp ? (
-          <h5
-            className='
+        <div
+          className='
+        flex
+        items-center
+        space-x-4
+        '
+        >
+          {timestamp ? (
+            <h5
+              className='
             desktopDiv
-                text-sm
+                text-xs
                 font-thin 
                 font-google-sans 
                 text-gray-500'
-          >
-            {new Date(timestamp?.toDate()).toLocaleString()}
-          </h5>
-        ) : (
-          <h5
-            className='
+            >
+              {new Date(timestamp?.toDate()).toLocaleString()}
+            </h5>
+          ) : (
+            <h5
+              className='
             desktopDiv
-                text-sm
+                text-xs
                 font-thin 
                 font-google-sans 
                 text-gray-500'
+            >
+              Loading...
+            </h5>
+          )}
+          <Dropdown
+            color='blue'
+            buttonType='link'
+            size='sm'
+            rounded={false}
+            block={false}
+            ripple='light'
           >
-            Loading...
-          </h5>
-        )}
+            <DropdownLink
+              href='#'
+              color='red'
+              ripple='dark'
+              onClick={e => e.preventDefault()}
+            >
+              Remove
+            </DropdownLink>
+          </Dropdown>
+        </div>
       </div>
       {articleImage ? (
         <img
@@ -120,6 +141,26 @@ function Article ({
       >
         {post}
       </h4>
+      <Button
+        onClick={goToPost}
+        color='blue'
+        buttonType='link'
+        iconOnly={false}
+        block={false}
+        rounded={false}
+        ripple='light'
+        className='mx-auto'
+      >
+        <h4
+          className='
+        text-sm 
+        font-google-sans 
+        font-normal 
+        capitalize'
+        >
+          Read post
+        </h4>
+      </Button>
     </div>
   )
 }
