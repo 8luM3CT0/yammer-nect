@@ -51,19 +51,7 @@ function Finance ({ finnhub_news, finnhub_stocks }) {
       border-blue-500
       '
       >
-        {finnhub_stocks.slice(0, 10).map(stock => (
-          <h2
-            className='
-          text-sm 
-          flex 
-          text-center 
-          capitalize 
-          font-robot-slab 
-          font-semibold'
-          >
-            {stock.symbol} - {stock.description} - {stock.type}
-          </h2>
-        ))}
+        finance bits
       </main>
     </div>
   )
