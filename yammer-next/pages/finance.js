@@ -64,14 +64,9 @@ export async function getServerSideProps () {
     `https://finnhub.io/api/v1/news?category=general&token=${process.env.finnhub_key}`
   ).then(res => res.json())
 
-  const marketStockSymbols = await fetch(
-    `https://finnhub.io/api/v1/stock/symbol?exchange=US&token=${process.env.finnhub_key}`
-  ).then(res => res.json())
-
   return {
     props: {
-      finnhub_news: marketNews,
-      finnhub_stocks: marketStockSymbols
+      finnhub_news: marketNews
     }
   }
 }
