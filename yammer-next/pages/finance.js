@@ -5,12 +5,17 @@ import finance_endpoints from '../utils/finance_endpoints'
 import ReactHighcharts from 'react-highcharts'
 import moment from 'moment'
 //back-end
+import { useRouter } from 'next/router'
 import { creds, store, provider } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import test_data from '../utils/test_data'
 
 function Finance ({ finnhub_news, finnhub_stocks }) {
+  const router = useRouter()
   const [user] = useAuthState(creds)
+  if (!user) {
+    router.push('/')
+  }
   console.log(finnhub_news)
 
   const configPrice = {

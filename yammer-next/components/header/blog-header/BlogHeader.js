@@ -19,6 +19,7 @@ function BlogHeader () {
   const [showLogin, setShowLogin] = useState(false)
   const [email, setEmail] = useState(false)
   const [password, setPassword] = useState(false)
+  const [showUser, setShowUser] = useState(false)
 
   const signIn = e => {
     e.preventDefault()
@@ -212,7 +213,7 @@ function BlogHeader () {
             </Button>
           ) : (
             <Button
-              onClick={signOut}
+              onClick={e => setShowUser(true)}
               color='blue'
               buttonType='link'
               iconOnly={false}
@@ -444,6 +445,53 @@ function BlogHeader () {
             </div>
           </ModalBody>
         </ModalHeader>
+      </Modal>
+      <Modal
+        active={showUser}
+        size='regular'
+        toggler={() => setShowUser(false)}
+      >
+        <ModalHeader toggler={() => setShowUser(false)}>
+          Hello, user
+        </ModalHeader>
+        <ModalBody>
+          <div className='p-[40px] grid place-items-center space-y-4'>
+            <img
+              src={user.photoURL}
+              alt=''
+              className='
+            h-24 
+            w-24 
+            rounded-full 
+            border-4 
+            border-blue-300'
+            />
+            <h2
+              className='
+            text-base text-blue-400 font-robot-slab font-semibold'
+            >
+              {user.email}
+            </h2>
+            <h3 className='text-lg text-blue-300 font-robot-slab font-normal'>
+              {user.displayName}
+            </h3>
+          </div>
+        </ModalBody>
+        <ModalFooter>
+          <div className='mx-auto'>
+            <Button
+              onClick={signOut}
+              color='red'
+              buttonType='link'
+              iconOnly={false}
+              block={false}
+              rounded={false}
+              ripple='light'
+            >
+              Sign out
+            </Button>
+          </div>
+        </ModalFooter>
       </Modal>
     </>
   )
