@@ -5,6 +5,7 @@ import Modal from '@material-tailwind/react/Modal'
 import ModalHeader from '@material-tailwind/react/ModalHeader'
 import ModalBody from '@material-tailwind/react/ModalBody'
 import ModalFooter from '@material-tailwind/react/ModalFooter'
+import Login from '../../../pages/login'
 //back-end
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
@@ -14,6 +15,7 @@ import firebase from 'firebase'
 
 function BlogHeader () {
   const [user] = useAuthState(creds)
+  if (!user) return <Login />
   const router = useRouter()
   const [showOptions, setShowOptions] = useState(false)
   const [showLogin, setShowLogin] = useState(false)
