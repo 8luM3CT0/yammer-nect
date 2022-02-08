@@ -23,7 +23,6 @@ function Finance ({ finnhub_news, stock_quotes }) {
   if (!user) {
     router.push('/')
   }
-  console.log(stock_quotes)
 
   const configPrice = {
     yAxis: [
@@ -217,27 +216,9 @@ export async function getServerSideProps () {
     `https://finnhub.io/api/v1/news?${finance_endpoints.fetchMarketNews.url}`
   ).then(res => res.json())
 
-  const [stocksAPIPull] = await Promise.all([
-    fetch(
-      `https://finnhub.io/api/v1/quote?${finance_endpoints.fetchAmazonQuotes.url}`
-    ),
-    fetch(
-      `https://finnhub.io/api/v1/quote?${finance_endpoints.fetchAppleQuotes.url}`
-    ),
-    fetch(
-      `https://finnhub.io/api/v1/quote?${finance_endpoints.fetchMicrosoftQuotes.url}`
-    ),
-    fetch(
-      `https://finnhub.io/api/v1/quote?${finance_endpoints.fetchTeslaQuotes.url}`
-    )
-  ])
-
-  const [stockQuotations] = await Promise.all([stocksAPIPull.json()])
-
   return {
     props: {
-      finnhub_news: marketNews,
-      stock_quotes: stockQuotations
+      finnhub_news: marketNews
     }
   }
 }
