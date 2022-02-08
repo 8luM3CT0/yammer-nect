@@ -1,6 +1,13 @@
 //front-end
 import Head from 'next/head'
-import { Button, Icon, FinanceHeader, MarketNews, TopList } from '../components'
+import {
+  Button,
+  Icon,
+  FinanceHeader,
+  MarketNews,
+  TopList,
+  WatchList
+} from '../components'
 import finance_endpoints from '../utils/finance_endpoints'
 import ReactHighcharts from 'react-highcharts'
 import moment from 'moment'
@@ -10,13 +17,13 @@ import { creds, store, provider } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import test_data from '../utils/test_data'
 
-function Finance ({ finnhub_news, finnhub_stocks }) {
+function Finance ({ finnhub_news, stock_quotes }) {
   const router = useRouter()
   const [user] = useAuthState(creds)
   if (!user) {
     router.push('/')
   }
-  console.log(finnhub_news)
+  console.log(stock_quotes)
 
   const configPrice = {
     yAxis: [
@@ -172,6 +179,32 @@ function Finance ({ finnhub_news, finnhub_stocks }) {
           ></ReactHighcharts>
           <TopList />
         </div>
+        <div
+          className='
+        h-[740px] 
+        bg-gray-600
+        grid  
+        mx-auto 
+        max-w-full
+        '
+        >
+          <h2
+            className='
+          text-teal-400 
+          font-bold 
+          font-robot-slab 
+          text-xl 
+          px-6 
+          py-5
+          top-0
+          left-0 
+          z-20
+          sticky'
+          >
+            My watchlist
+          </h2>
+          <WatchList />
+        </div>
       </main>
     </div>
   )
@@ -184,9 +217,27 @@ export async function getServerSideProps () {
     `https://finnhub.io/api/v1/news?${finance_endpoints.fetchMarketNews.url}`
   ).then(res => res.json())
 
+  const [stocksAPIPull] = await Promise.all([
+    fetch(
+      `https://finnhub.io/api/v1/quote?${finance_endpoints.fetchAmazonQuotes.url}`
+    ),
+    fetch(
+      `https://finnhub.io/api/v1/quote?${finance_endpoints.fetchAppleQuotes.url}`
+    ),
+    fetch(
+      `https://finnhub.io/api/v1/quote?${finance_endpoints.fetchMicrosoftQuotes.url}`
+    ),
+    fetch(
+      `https://finnhub.io/api/v1/quote?${finance_endpoints.fetchTeslaQuotes.url}`
+    )
+  ])
+
+  const [stockQuotations] = await Promise.all([stocksAPIPull.json()])
+
   return {
     props: {
-      finnhub_news: marketNews
+      finnhub_news: marketNews,
+      stock_quotes: stockQuotations
     }
   }
 }
