@@ -12,12 +12,13 @@ import finance_endpoints from '../utils/finance_endpoints'
 import ReactHighcharts from 'react-highcharts'
 import moment from 'moment'
 //back-end
+import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { creds, store, provider } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import test_data from '../utils/test_data'
 
-function Finance ({ finnhub_news, stock_quotes }) {
+function Finance ({ finnhub_news, apple_quote }) {
   const router = useRouter()
   const [user] = useAuthState(creds)
   if (!user) {
@@ -119,6 +120,7 @@ function Finance ({ finnhub_news, stock_quotes }) {
   }
 
   const options = { style: 'currency', currency: 'USD' }
+  console.log(apple_quote)
 
   return (
     <div
@@ -195,7 +197,9 @@ function Finance ({ finnhub_news, stock_quotes }) {
           font-robot-slab 
           text-xl 
           px-6 
-          py-5
+          pt-6
+          flex-grow
+          bg-gray-600
           top-0
           left-0 
           z-20
@@ -203,7 +207,349 @@ function Finance ({ finnhub_news, stock_quotes }) {
           >
             My watchlist
           </h2>
-          <WatchList />
+          <div
+            className='
+          overflow-y-scroll 
+  scrollbar-hide 
+  grid
+  space-y-6
+  h-full
+  w-full
+  px-6
+  mx-auto
+          '
+          >
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+            <WatchList
+              symbol='AAPL'
+              company='Apple Inc.'
+              current_price='174.83'
+              change='+3.17'
+              percentage_change='+1.8467'
+              low_price='171.43'
+              high_price='175.35'
+              volume='1.85M'
+              market_cap='2.64T'
+            />
+          </div>
         </div>
       </main>
     </div>
@@ -217,9 +563,14 @@ export async function getServerSideProps () {
     `https://finnhub.io/api/v1/news?${finance_endpoints.fetchMarketNews.url}`
   ).then(res => res.json())
 
+  const appleQuote = await fetch(
+    `https://finnhub.io/api/v1/quote?${finance_endpoints.fetchAppleQuotes.url}`
+  ).then(res => res.json())
+
   return {
     props: {
-      finnhub_news: marketNews
+      finnhub_news: marketNews,
+      apple_quote: appleQuote
     }
   }
 }

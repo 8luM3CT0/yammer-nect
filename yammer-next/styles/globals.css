@@ -381,4 +381,17 @@
     font-semibold
     px-8
   }
+  
+  .watchListDetails{
+    @apply 
+    lg:font-light 
+    lg:text-lg 
+    font-semibold
+  }
+
+  .watchListDetailsHidden{
+    @apply
+    lg:inline-flex
+    hidden
+  }
 }
