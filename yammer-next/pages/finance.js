@@ -153,6 +153,7 @@ function Finance ({ finnhub_news, stock_quotes }) {
       <main
         className='
       max-w-5xl 
+      min-w-3xl
       mx-auto
       bg-gray-200 
       h-screen
