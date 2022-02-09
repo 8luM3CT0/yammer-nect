@@ -198,6 +198,7 @@ function Finance ({ finnhub_news, apple_quote }) {
           text-xl 
           px-6 
           pt-6
+          pb-3
           flex-grow
           bg-gray-600
           top-0
@@ -231,9 +232,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='AGFS'
+              company='Agrofresh Solutions Inc.'
+              current_price='2.04'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -242,9 +243,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='AMZN'
+              company='Amazon Inc.'
+              current_price='3,228.27'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -253,9 +254,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='BRK.A'
+              company='Berkshire Hathaway Inc.'
+              current_price='482,030.00'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -264,9 +265,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='BTI'
+              company='British American Tobacco PI.C'
+              current_price='44.16'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -275,9 +276,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='COMP'
+              company='NASDAQ'
+              current_price='14,194.46'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -286,9 +287,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='CRM'
+              company='SalesForce Com, Inc.'
+              current_price='217.60'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -297,9 +298,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='EVRI'
+              company='Everi Holdings Inc.'
+              current_price='21.97'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -308,9 +309,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='FB'
+              company='Meta Inc.'
+              current_price='220.18'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -319,9 +320,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='GOOGL'
+              company='Alphabet Inc.'
+              current_price='2,787.98'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -330,9 +331,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='HD'
+              company='The Home Depot, Inc.'
+              current_price='361.56'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -341,9 +342,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='HON'
+              company='Honeywell International Inc.'
+              current_price='194.56'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -352,9 +353,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='IBM'
+              company='International Business Machines Corp.'
+              current_price='137.02'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -363,9 +364,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='INX'
+              company='S&P 500'
+              current_price='4,521.54'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -374,9 +375,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='ITX'
+              company='Inditex Inc.'
+              current_price='26.09'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -385,9 +386,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='MCD'
+              company='McDonalds Inc.'
+              current_price='260.08'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -396,9 +397,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='MMM'
+              company='3M Company'
+              current_price='162.41'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -407,9 +408,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='MSFT'
+              company='Microsoft Inc.'
+              current_price='304.56'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -418,9 +419,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='NKE'
+              company='Nike Inc.'
+              current_price='143.53'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -429,9 +430,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='NVO'
+              company='Novo Nordisk A/S'
+              current_price='101.55'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -440,9 +441,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='PEP'
+              company='Pepsi Co'
+              current_price='151.36'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -451,9 +452,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='SBUX'
+              company='Starbucks Inc.'
+              current_price='94.92'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -462,9 +463,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='SNAP'
+              company='Snap Inc.'
+              current_price='37.56'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -473,9 +474,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='T'
+              company='AT&T Inc.'
+              current_price='32.34'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -484,9 +485,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='TMUS'
+              company='T-Mobile US Inc.'
+              current_price='125.44'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -495,9 +496,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='TSM'
+              company='Taiwan Semiconductor Inc.'
+              current_price='123.72'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -506,9 +507,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='TWTR'
+              company='Twitter Inc.'
+              current_price='35.98'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -517,9 +518,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='UL'
+              company='Unilever Inc.'
+              current_price='52.30'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -528,9 +529,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='VZ'
+              company='Verizon Inc.'
+              current_price='52.30'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'
@@ -539,9 +540,9 @@ function Finance ({ finnhub_news, apple_quote }) {
               market_cap='2.64T'
             />
             <WatchList
-              symbol='AAPL'
-              company='Apple Inc.'
-              current_price='174.83'
+              symbol='WMT'
+              company='Walmart Inc.'
+              current_price='52.82'
               change='+3.17'
               percentage_change='+1.8467'
               low_price='171.43'

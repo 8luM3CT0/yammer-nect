@@ -16,15 +16,15 @@ function WatchList ({
       className='
         w-full
         flex-grow
-        justify-evenly 
-        text-green-400 
+        justify-between
+        text-indigo-200 
         font-robot-slab 
         font-light 
         text-lg
         lg:flex
         grid
-        h-[80px]
-        px-4 
+        h-[120px]
+        p-4
         items-center
         cursor-pointer
         hover:bg-blue-400
