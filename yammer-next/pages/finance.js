@@ -19,7 +19,16 @@ import { creds, store, provider } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import test_data from '../utils/test_data'
 
-function Finance ({ finnhub_news, apple_quote }) {
+function Finance ({
+  finnhub_news,
+  apple_quote,
+  agfs_quote,
+  tsla_quote,
+  msft_quote,
+  amzn_quote,
+  spot_quote,
+  fb_quote
+}) {
   const router = useRouter()
   const [user] = useAuthState(creds)
   if (!user) {
@@ -119,9 +128,6 @@ function Finance ({ finnhub_news, apple_quote }) {
       }
     ]
   }
-
-  const options = { style: 'currency', currency: 'USD' }
-  console.log(apple_quote, finnhub_news)
 
   return (
     <div
@@ -234,7 +240,7 @@ function Finance ({ finnhub_news, apple_quote }) {
                 market_cap={stock.marketCap}
               />
             ))}
-            {apple_quote.map(stock => (
+            {agfs_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -247,7 +253,7 @@ function Finance ({ finnhub_news, apple_quote }) {
                 market_cap={stock.marketCap}
               />
             ))}
-            {apple_quote.map(stock => (
+            {tsla_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -260,7 +266,20 @@ function Finance ({ finnhub_news, apple_quote }) {
                 market_cap={stock.marketCap}
               />
             ))}
-            {apple_quote.map(stock => (
+            {msft_quote.map(stock => (
+              <WatchList
+                symbol={stock.symbol}
+                company={stock.name}
+                current_price={stock.price}
+                change={stock.change}
+                percentage_change={stock.changesPercentage}
+                low_price={stock.yearLow}
+                high_price={stock.yearHigh}
+                volume={stock.volume}
+                market_cap={stock.marketCap}
+              />
+            ))}
+            {fb_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -287,14 +306,44 @@ export async function getServerSideProps () {
     `https://finnhub.io/api/v1/news?${finance_endpoints.fetchMarketNews.url}`
   ).then(res => res.json())
 
-  const appleQuote = await fetch(
+  const stockReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=${process.env.fmp_key}`
+  ).then(res => res.json())
+
+  const secondReturn = await fetch(
+    `https://financialmodelingprep.com/api/v3/quote/AGFS?apikey=${process.env.fmp_key}`
+  ).then(res => res.json())
+
+  const thirdReturn = await fetch(
+    `https://financialmodelingprep.com/api/v3/quote/TSLA?apikey=${process.env.fmp_key}`
+  ).then(res => res.json())
+
+  const fourthReturn = await fetch(
+    `https://financialmodelingprep.com/api/v3/quote/MSFT?apikey=${process.env.fmp_key}`
+  ).then(res => res.json())
+
+  const fifthReturn = await fetch(
+    `https://financialmodelingprep.com/api/v3/quote/AMZN?apikey=${process.env.fmp_key}`
+  ).then(res => res.json())
+
+  const sixthReturn = await fetch(
+    `https://financialmodelingprep.com/api/v3/quote/SPOT?apikey=${process.env.fmp_key}`
+  ).then(res => res.json())
+
+  const seventhReturn = await fetch(
+    `https://financialmodelingprep.com/api/v3/quote/FB?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
   return {
     props: {
       finnhub_news: marketNews,
-      apple_quote: appleQuote
+      apple_quote: stockReturn,
+      agfs_quote: secondReturn,
+      tsla_quote: thirdReturn,
+      msft_quote: fourthReturn,
+      amzn_quote: fifthReturn,
+      spot_quote: sixthReturn,
+      fb_quote: seventhReturn
     }
   }
 }
