@@ -26,7 +26,11 @@ function Finance ({
   spot_quote,
   fb_quote,
   ibm_quote,
-  displayed_profile
+  displayed_profile,
+  finn_stock,
+  finn_stock_two,
+  finn_stock_three,
+  finn_stock_four
 }) {
   const router = useRouter()
   const [user] = useAuthState(creds)
@@ -37,8 +41,6 @@ function Finance ({
   const googleSignIn = () => {
     creds.signInWithPopup(provider).catch(alert)
   }
-
-  console.log(agfs_quote)
 
   const signIn = (
     <div className='grid h-screen place-items-center'>
@@ -190,7 +192,7 @@ function Finance ({
                 market_cap={stock.marketCap}
               />
             ))}
-            {msft_quote.map(stock => (
+            {/*msft_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -228,7 +230,7 @@ function Finance ({
                 volume={stock.volume}
                 market_cap={stock.marketCap}
               />
-            ))}
+            ))*/}
           </div>
         </div>
       </main>
@@ -247,7 +249,7 @@ export async function getServerSideProps () {
     `https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  const secondReturn = await fetch(
+  /*const secondReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/AGFS?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
@@ -274,6 +276,7 @@ export async function getServerSideProps () {
   const eighthReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/IBM?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
+  */
 
   const displayedProf = await fetch(
     `https://financialmodelingprep.com/api/v3/profile/ABNB?apikey=${process.env.fmp_key}`
@@ -283,13 +286,13 @@ export async function getServerSideProps () {
     props: {
       finnhub_news: marketNews,
       apple_quote: stockReturn,
-      agfs_quote: secondReturn,
+      /*agfs_quote: secondReturn,
       tsla_quote: thirdReturn,
       msft_quote: fourthReturn,
       amzn_quote: fifthReturn,
       spot_quote: sixthReturn,
       fb_quote: seventhReturn,
-      ibm_quote: eighthReturn,
+      ibm_quote: eighthReturn,*/
       displayed_profile: displayedProf
     }
   }

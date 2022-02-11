@@ -51,11 +51,21 @@ function WatchList ({
         </h4>
         <h3 className='watchListDetails'> {change.toFixed(2)}</h3>
         <h4 className='watchListDetails'>{percentage_change.toFixed(2)}</h4>
-        <h4 className='watchListDetails'>{numFormatter(volume)} </h4>
+        {volume ? (
+          <h4 className='watchListDetails'>{numFormatter(volume)} </h4>
+        ) : (
+          ' '
+        )}
         <h4 className='watchListDetailsHidden'>
           {low_price} - {high_price}
         </h4>
-        <h4 className='watchListDetailsHidden'>{numFormatter(market_cap)} </h4>
+        {market_cap ? (
+          <h4 className='watchListDetailsHidden'>
+            {numFormatter(market_cap)}{' '}
+          </h4>
+        ) : (
+          ' '
+        )}
       </div>
     </div>
   )
