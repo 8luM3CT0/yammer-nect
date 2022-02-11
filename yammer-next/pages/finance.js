@@ -34,9 +34,6 @@ function Finance ({
 }) {
   const router = useRouter()
   const [user] = useAuthState(creds)
-  if (!user) {
-    return signIn
-  }
 
   const googleSignIn = () => {
     creds.signInWithPopup(provider).catch(alert)
@@ -74,6 +71,10 @@ function Finance ({
       </div>
     </div>
   )
+
+  if (!user) {
+    return signIn
+  }
 
   return (
     <div
@@ -192,7 +193,7 @@ function Finance ({
                 market_cap={stock.marketCap}
               />
             ))}
-            {/*msft_quote.map(stock => (
+            {msft_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -205,7 +206,7 @@ function Finance ({
                 market_cap={stock.marketCap}
               />
             ))}
-            {fb_quote.map(stock => (
+            {/*fb_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -249,11 +250,11 @@ export async function getServerSideProps () {
     `https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  /*const secondReturn = await fetch(
-    `https://financialmodelingprep.com/api/v3/quote/AGFS?apikey=${process.env.fmp_key}`
+  const secondReturn = await fetch(
+    `https://financialmodelingprep.com/api/v3/quote/MSFT?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  const thirdReturn = await fetch(
+  /*const thirdReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/TSLA?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
@@ -286,9 +287,8 @@ export async function getServerSideProps () {
     props: {
       finnhub_news: marketNews,
       apple_quote: stockReturn,
-      /*agfs_quote: secondReturn,
-      tsla_quote: thirdReturn,
-      msft_quote: fourthReturn,
+      msft_quote: secondReturn,
+      /*tsla_quote: thirdReturn,
       amzn_quote: fifthReturn,
       spot_quote: sixthReturn,
       fb_quote: seventhReturn,
