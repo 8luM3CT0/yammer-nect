@@ -46,8 +46,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>SPOT</h1>-
-        <h2 className='font-normal text-base'>Spotify Technology SA</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Spotify Technology SA
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -67,8 +69,8 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>AAPL</h1>-
-        <h2 className='font-normal text-base'>Apple Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>Apple Inc.</h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -88,8 +90,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>AMZN</h1>-
-        <h2 className='font-normal text-base'>Amazon Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Amazon Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -109,8 +113,8 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>TSLA</h1>-
-        <h2 className='font-normal text-base'>Tesla Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>Tesla Inc.</h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -130,8 +134,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>FB</h1>-
-        <h2 className='font-normal text-base'>Meta Platforms Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Meta Platforms Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -151,8 +157,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>GOOGL</h1>-
-        <h2 className='font-normal text-base'>Alphabet Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Alphabet Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -172,7 +180,7 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>UBER</h1>-
-        <h2 className='font-normal text-base'>Uber Inc.</h2>-
+        <h2 className='font-normal text-base w-[120px] truncate'>Uber Inc.</h2>-
         <h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
@@ -193,7 +201,7 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>LYFT</h1>-
-        <h2 className='font-normal text-base'>Lyft Inc.</h2>-
+        <h2 className='font-normal text-base w-[120px] truncate'>Lyft Inc.</h2>-
         <h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
@@ -214,8 +222,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>ABNB</h1>-
-        <h2 className='font-normal text-base'>AirBnb Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          AirBnb Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -235,8 +245,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>NFLX</h1>-
-        <h2 className='font-normal text-base'>Netflix Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Netflix Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -256,8 +268,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>MSFT</h1>-
-        <h2 className='font-normal text-base'>Microsoft Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Microsoft Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -277,8 +291,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>CRM</h1>-
-        <h2 className='font-normal text-base'>Salesforce Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Salesforce Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -298,8 +314,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>ORCL</h1>-
-        <h2 className='font-normal text-base'>Oracle Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Oracle Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -319,8 +337,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>NVDA</h1>-
-        <h2 className='font-normal text-base'>NVIDIA Corp.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          NVIDIA Corp.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -340,8 +360,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>VZN</h1>-
-        <h2 className='font-normal text-base'>Verizon Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Verizon Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -361,8 +383,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>TMUS</h1>-
-        <h2 className='font-normal text-base'>T-Mobile US Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          T-Mobile US Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -382,8 +406,10 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>TWTR</h1>-
-        <h2 className='font-normal text-base'>Twitter Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Twitter Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
         className='flex 
@@ -403,7 +429,7 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>T</h1>-
-        <h2 className='font-normal text-base'>AT&T Inc.</h2>-
+        <h2 className='font-normal text-base w-[120px] truncate'>AT&T Inc.</h2>-
         <h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
@@ -424,7 +450,7 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>SNAP</h1>-
-        <h2 className='font-normal text-base'>Snap Inc.</h2>-
+        <h2 className='font-normal text-base w-[120px] truncate'>Snap Inc.</h2>-
         <h3 className='font-light text-base'>$139.97</h3>
       </span>
       <span
@@ -445,7 +471,7 @@ function TopList () {
     '
       >
         <h1 className='font-semibold text-lg '>IBM</h1>-
-        <h2 className='font-normal text-base'>IBM Corp.</h2>-
+        <h2 className='font-normal text-base w-[120px] truncate'>IBM Corp.</h2>-
         <h3 className='font-light text-base'>$139.97</h3>
       </span>
     </div>
