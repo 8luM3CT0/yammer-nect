@@ -6,18 +6,15 @@ import {
   FinanceHeader,
   MarketNews,
   TopList,
-  WatchList
+  WatchList,
+  DisplayedStock
 } from '../components'
 import finance_endpoints from '../utils/finance_endpoints'
-import ReactHighcharts from 'react-highcharts'
-import moment from 'moment'
-import { Carousel } from 'react-responsive-carousel'
 //back-end
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { creds, store, provider } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
-import test_data from '../utils/test_data'
 
 function Finance ({
   finnhub_news,
@@ -27,107 +24,54 @@ function Finance ({
   msft_quote,
   amzn_quote,
   spot_quote,
-  fb_quote
+  fb_quote,
+  ibm_quote,
+  displayed_profile
 }) {
   const router = useRouter()
   const [user] = useAuthState(creds)
   if (!user) {
-    router.push('/')
+    return signIn
   }
 
-  const configPrice = {
-    yAxis: [
-      {
-        offset: 20,
-
-        labels: {
-          formatter: function () {
-            return numberFormat.format(this.value)
-          },
-          x: -15,
-          style: {
-            color: '#000',
-            position: 'absolute'
-          },
-          align: 'left'
-        }
-      }
-    ],
-    tooltip: {
-      shared: true,
-      formatter: function () {
-        return (
-          numberFormat.format(this.y, 0) +
-          '</b></br>' +
-          moment(this.x).format('MMM DD YYYY, h:mm')
-        )
-      }
-    },
-    plotOptions: {
-      series: {
-        showInNavigator: true,
-        gapSize: 6
-      }
-    },
-    rangeSelector: {
-      selected: 1
-    },
-    title: {
-      text: 'Bitcoin stock price'
-    },
-    chart: {
-      height: 600
-    },
-    credits: {
-      enabled: false
-    },
-    legend: {
-      enabled: true
-    },
-    xAxis: {
-      type: 'date'
-    },
-    rangeSelector: {
-      buttons: [
-        {
-          type: 'day',
-          count: 1,
-          text: '1d'
-        },
-        {
-          type: 'day',
-          count: 7,
-          text: '7d'
-        },
-        {
-          type: 'month',
-          count: 1,
-          text: '1m'
-        },
-        {
-          type: 'month',
-          count: 3,
-          text: '3m'
-        },
-        {
-          type: 'all',
-          text: 'All'
-        }
-      ],
-      selected: 4
-    },
-    series: [
-      {
-        name: 'Price',
-        type: 'spline',
-
-        data: test_data.price,
-        tooltip: {
-          valueDecimals: 2
-        }
-      }
-    ]
+  const googleSignIn = () => {
+    creds.signInWithPopup(provider).catch(alert)
   }
+
+  console.log(agfs_quote)
+
+  const signIn = (
+    <div className='grid h-screen place-items-center'>
+      <div
+        className='
+          p-[100px] 
+          bg-gray-800 
+          grid 
+          place-items-center 
+          items-center 
+          space-y-5'
+      >
+        <Icon name='cloud' size='3xl' color='blue' className='h-20' />
+        <h2 className='text-blue-400 font-robot-slab font-normal text-lg '>
+          Welcome to Blume
+        </h2>
+        <Button
+          onClick={googleSignIn}
+          color='blue'
+          buttonType='link'
+          size='regular'
+          iconOnly={false}
+          block={false}
+          rounded={false}
+          ripple='light'
+        >
+          <h2 className='text-base capitalize font-semibold font-google-sans'>
+            Sign in
+          </h2>
+        </Button>
+      </div>
+    </div>
+  )
 
   return (
     <div
@@ -182,10 +126,16 @@ function Finance ({
         space-x-3 
         bg-gray-800'
         >
-          <ReactHighcharts
-            className='bg-gray-600 my-4 px-3'
-            config={configPrice}
-          ></ReactHighcharts>
+          {displayed_profile.map(profile => (
+            <DisplayedStock
+              companyLogo={profile.image}
+              symbol={profile.symbol}
+              title={profile.companyName}
+              currentPrice={profile.price}
+              industry={profile.industry}
+              website={profile.website}
+            />
+          ))}
           <TopList />
         </div>
         <div
@@ -227,33 +177,7 @@ function Finance ({
   mx-auto
           '
           >
-            {/*msft_quote.map(stock => (
-              <WatchList
-                symbol={stock.symbol}
-                company={stock.name}
-                current_price={stock.price}
-                change={stock.change}
-                percentage_change={stock.changesPercentage}
-                low_price={stock.yearLow}
-                high_price={stock.yearHigh}
-                volume={stock.volume}
-                market_cap={stock.marketCap}
-              />
-            ))}
-            {agfs_quote.map(stock => (
-              <WatchList
-                symbol={stock.symbol}
-                company={stock.name}
-                current_price={stock.price}
-                change={stock.change}
-                percentage_change={stock.changesPercentage}
-                low_price={stock.yearLow}
-                high_price={stock.yearHigh}
-                volume={stock.volume}
-                market_cap={stock.marketCap}
-              />
-            ))}
-            {tsla_quote.map(stock => (
+            {apple_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -291,7 +215,20 @@ function Finance ({
                 volume={stock.volume}
                 market_cap={stock.marketCap}
               />
-            ))*/}
+            ))}
+            {ibm_quote.map(stock => (
+              <WatchList
+                symbol={stock.symbol}
+                company={stock.name}
+                current_price={stock.price}
+                change={stock.change}
+                percentage_change={stock.changesPercentage}
+                low_price={stock.yearLow}
+                high_price={stock.yearHigh}
+                volume={stock.volume}
+                market_cap={stock.marketCap}
+              />
+            ))}
           </div>
         </div>
       </main>
@@ -334,6 +271,14 @@ export async function getServerSideProps () {
     `https://financialmodelingprep.com/api/v3/quote/FB?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
+  const eighthReturn = await fetch(
+    `https://financialmodelingprep.com/api/v3/quote/IBM?apikey=${process.env.fmp_key}`
+  ).then(res => res.json())
+
+  const displayedProf = await fetch(
+    `https://financialmodelingprep.com/api/v3/profile/ABNB?apikey=${process.env.fmp_key}`
+  ).then(res => res.json())
+
   return {
     props: {
       finnhub_news: marketNews,
@@ -343,7 +288,9 @@ export async function getServerSideProps () {
       msft_quote: fourthReturn,
       amzn_quote: fifthReturn,
       spot_quote: sixthReturn,
-      fb_quote: seventhReturn
+      fb_quote: seventhReturn,
+      ibm_quote: eighthReturn,
+      displayed_profile: displayedProf
     }
   }
 }

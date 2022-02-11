@@ -11,6 +11,11 @@ function WatchList ({
   volume,
   market_cap
 }) {
+  const numFormatter = num => {
+    return Math.abs(num) > 999
+      ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + 'M'
+      : Math.sign(num) * Math.abs(num)
+  }
   return (
     <div
       className='
@@ -38,19 +43,19 @@ function WatchList ({
     >
       <div className='lg:flex lg:items-center lg:space-x-4 grid '>
         <h1 className='text-2xl font-normal'>{symbol}</h1>
-        <h2 className='text-xl font-semibold'>{company}</h2>
+        <h2 className='text-xl font-semibold w-[120px] truncate'>{company}</h2>
       </div>
       <div className='flex items-center text-center space-x-3'>
         <h4 className='watchListDetails font-semibold text-2xl '>
           {current_price}
         </h4>
-        <h3 className='watchListDetails'> {change}</h3>
-        <h4 className='watchListDetails'>{percentage_change}</h4>
-        <h4 className='watchListDetails'>{volume} </h4>
+        <h3 className='watchListDetails'> {change.toFixed(2)}</h3>
+        <h4 className='watchListDetails'>{percentage_change.toFixed(2)}</h4>
+        <h4 className='watchListDetails'>{numFormatter(volume)} </h4>
         <h4 className='watchListDetailsHidden'>
           {low_price} - {high_price}
         </h4>
-        <h4 className='watchListDetailsHidden'>{market_cap} </h4>
+        <h4 className='watchListDetailsHidden'>{numFormatter(market_cap)} </h4>
       </div>
     </div>
   )

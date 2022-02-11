@@ -122,19 +122,6 @@ function Header () {
           {/**header center /routers */}
           <div className='centerDiv'>
             <Button
-              color='blue'
-              buttonType='link'
-              iconOnly={false}
-              block={false}
-              rounded={false}
-              ripple='light'
-            >
-              <div className='grid space-y-3'>
-                <Icon name='group' />
-                <h2 className='routerName'>Confidants</h2>
-              </div>
-            </Button>
-            <Button
               onClick={() => router.push('/chat')}
               color='blue'
               buttonType='link'
@@ -256,19 +243,6 @@ function Header () {
                     space-y-3 
                     p-[40px]'
           >
-            <Button
-              color='blue'
-              buttonType='link'
-              iconOnly={false}
-              block={false}
-              rounded={false}
-              ripple='light'
-            >
-              <div className='justify-evenly flex items-center space-x-3'>
-                <Icon name='group' />
-                <h2 className='optionsTitle'>Confidants</h2>
-              </div>
-            </Button>
             <Button
               onClick={() => router.push('/chat')}
               color='blue'

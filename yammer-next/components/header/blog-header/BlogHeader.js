@@ -136,19 +136,7 @@ function BlogHeader () {
                 <h2 className='routerName'>Home</h2>
               </div>
             </Button>
-            <Button
-              color='blue'
-              buttonType='link'
-              iconOnly={false}
-              block={false}
-              rounded={false}
-              ripple='light'
-            >
-              <div className='grid space-y-3'>
-                <Icon name='group' />
-                <h2 className='routerName'>Confidants</h2>
-              </div>
-            </Button>
+
             <Button
               onClick={() => router.push('/chat')}
               color='blue'
@@ -268,19 +256,6 @@ function BlogHeader () {
               <div className='grid space-y-3'>
                 <Icon name='home' />
                 <h2 className='routerName'>Home</h2>
-              </div>
-            </Button>
-            <Button
-              color='blue'
-              buttonType='link'
-              iconOnly={false}
-              block={false}
-              rounded={false}
-              ripple='light'
-            >
-              <div className='justify-evenly flex items-center space-x-3'>
-                <Icon name='group' />
-                <h2 className='optionsTitle'>Confidants</h2>
               </div>
             </Button>
             <Button

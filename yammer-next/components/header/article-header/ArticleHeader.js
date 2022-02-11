@@ -181,19 +181,6 @@ function ArticleHeader () {
               ripple='light'
             >
               <div className='justify-evenly flex items-center space-x-3'>
-                <Icon name='group' />
-                <h2 className='optionsTitle'>Confidants</h2>
-              </div>
-            </Button>
-            <Button
-              color='blue'
-              buttonType='link'
-              iconOnly={false}
-              block={false}
-              rounded={false}
-              ripple='light'
-            >
-              <div className='justify-evenly flex items-center space-x-3'>
                 <Icon name='inbox' />
                 <h2 className='optionsTitle'>Chat</h2>
               </div>
