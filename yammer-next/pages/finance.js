@@ -76,6 +76,8 @@ function Finance ({
     return signIn
   }
 
+  console.log(tsla_quote)
+
   return (
     <div
       className='
@@ -206,6 +208,19 @@ function Finance ({
                 market_cap={stock.marketCap}
               />
             ))}
+            {tsla_quote.map(stock => (
+              <WatchList
+                symbol={stock.symbol}
+                company={stock.name}
+                current_price={stock.price}
+                change={stock.change}
+                percentage_change={stock.changesPercentage}
+                low_price={stock.yearLow}
+                high_price={stock.yearHigh}
+                volume={stock.volume}
+                market_cap={stock.marketCap}
+              />
+            ))}
             {/*fb_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
@@ -254,12 +269,12 @@ export async function getServerSideProps () {
     `https://financialmodelingprep.com/api/v3/quote/MSFT?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  /*const thirdReturn = await fetch(
+  const thirdReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/TSLA?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  const fourthReturn = await fetch(
-    `https://financialmodelingprep.com/api/v3/quote/MSFT?apikey=${process.env.fmp_key}`
+  /*const fourthReturn = await fetch(
+    `https://financialmodelingprep.com/api/v3/quote/FB?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
   const fifthReturn = await fetch(
@@ -271,10 +286,6 @@ export async function getServerSideProps () {
   ).then(res => res.json())
 
   const seventhReturn = await fetch(
-    `https://financialmodelingprep.com/api/v3/quote/FB?apikey=${process.env.fmp_key}`
-  ).then(res => res.json())
-
-  const eighthReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/IBM?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
   */
@@ -288,8 +299,8 @@ export async function getServerSideProps () {
       finnhub_news: marketNews,
       apple_quote: stockReturn,
       msft_quote: secondReturn,
-      /*tsla_quote: thirdReturn,
-      amzn_quote: fifthReturn,
+      tsla_quote: thirdReturn,
+      /*amzn_quote: fifthReturn,
       spot_quote: sixthReturn,
       fb_quote: seventhReturn,
       ibm_quote: eighthReturn,*/
