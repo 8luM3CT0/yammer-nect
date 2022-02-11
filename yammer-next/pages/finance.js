@@ -227,7 +227,7 @@ function Finance ({
   mx-auto
           '
           >
-            {msft_quote.map(stock => (
+            {/*msft_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -240,7 +240,7 @@ function Finance ({
                 market_cap={stock.marketCap}
               />
             ))}
-            {/*agfs_quote.map(stock => (
+            {agfs_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
