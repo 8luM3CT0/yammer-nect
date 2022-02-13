@@ -380,6 +380,10 @@
     font-robot-slab 
     font-semibold
     px-8
+    w-[70px]
+    truncate
+    lg:w-full
+
   }
   
   .watchListDetails{

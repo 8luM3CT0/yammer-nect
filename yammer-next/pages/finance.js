@@ -5,11 +5,11 @@ import {
   Icon,
   FinanceHeader,
   MarketNews,
-  TopList,
   WatchList,
   DisplayedStock
 } from '../components'
 import finance_endpoints from '../utils/finance_endpoints'
+import TopList from './top-list/top_list'
 //back-end
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -131,16 +131,23 @@ function Finance ({
         space-x-3 
         bg-gray-800'
         >
-          {displayed_profile.map(profile => (
-            <DisplayedStock
-              companyLogo={profile.image}
-              symbol={profile.symbol}
-              title={profile.companyName}
-              currentPrice={profile.price}
-              industry={profile.industry}
-              website={profile.website}
-            />
-          ))}
+          <div className='h-[480px] grid place-items-center'>
+            {displayed_profile.map(profile => (
+              <DisplayedStock
+                companyLogo={profile.image}
+                symbol={profile.symbol}
+                title={profile.companyName}
+                currentPrice={profile.price}
+                industry={profile.industry}
+                website={profile.website}
+                workAddress={profile.address}
+                city={profile.city}
+                state={profile.state}
+                zip={profile.zip}
+                compDesc={profile.description}
+              />
+            ))}
+          </div>
           <TopList />
         </div>
         <div
