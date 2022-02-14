@@ -18,7 +18,12 @@ function WatchList ({
   low_price,
   current_price,
   volume,
-  market_cap
+  market_cap,
+  day_high,
+  day_low,
+  average50,
+  average200,
+  averageVol
 }) {
   const [showMore, setShowMore] = useState(false)
 
@@ -26,6 +31,20 @@ function WatchList ({
     return Math.abs(num) > 999
       ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + 'M'
       : Math.sign(num) * Math.abs(num)
+  }
+
+  const countFormatter = num => {
+    if (num > 999 && num < 1000000) {
+      return (num / 1000).toFixed(1) + 'K' // convert to K for number from > 1000 < 1 million
+    } else if (num > 1000000) {
+      return (num / 1000000).toFixed(1) + 'M' // convert to M for number from > 1 million
+    } else if (num > 1000000000) {
+      return (num / 1000000000).toFixed(1) + 'B'
+    } else if (num > 1000000000000) {
+      return (num / 1000000000000).toFixed + 'T'
+    } else if (num < 900) {
+      return num // if value < 1000, nothing to do
+    }
   }
 
   return (
@@ -68,7 +87,7 @@ function WatchList ({
           <h3 className='watchListDetails'> {change.toFixed(2)}</h3>
           <h4 className='watchListDetails'>{percentage_change.toFixed(2)}</h4>
           {volume ? (
-            <h4 className='watchListDetails'>{numFormatter(volume)} </h4>
+            <h4 className='watchListDetails'>{countFormatter(volume)} </h4>
           ) : (
             ' '
           )}
@@ -77,7 +96,7 @@ function WatchList ({
           </h4>
           {market_cap ? (
             <h4 className='watchListDetailsHidden'>
-              {numFormatter(market_cap)}{' '}
+              {countFormatter(market_cap)}{' '}
             </h4>
           ) : (
             ' '
@@ -86,17 +105,78 @@ function WatchList ({
       </div>
       <Modal active={showMore} size='lg' toggler={() => setShowMore(false)}>
         <ModalHeader toggler={() => setShowMore(false)}>
-          Stock details
+          <h2 className='text-3xl font-robot-slab p-[30px] text-green-400 font-bold'>
+            {symbol} - {company}
+          </h2>
         </ModalHeader>
         <ModalBody>
-          <div className='grid p-[40px] place-items-center'>
-            <p className='text-base leading-relaxed text-gray-600 font-normal'>
-              I always felt like I could do anything. That’s the main thing
-              people are controlled by! Thoughts- their perception of
-              themselves! They're slowed down by their perception of themselves.
-              If you're taught you can’t do anything, you won’t do anything. I
-              was taught I could do everything.
-            </p>
+          <div className='grid p-[40px] space-y-4 place-items-center'>
+            <h2 className='text-blue-200 text-2xl font-robot-slab font-normal'>
+              Stock prices
+            </h2>
+            <h3 className='text-xl font-robot-slab text-green-500 font-semibold'>
+              Price: ${current_price}
+            </h3>
+            <div className='flex items-center space-x-3'>
+              {/**day high and day low */}
+              <div className='grid space-y-2 '>
+                <h4 className='text-lg font-robot-slab text-blue-300 font-normal'>
+                  Day high: ${day_high}
+                </h4>
+                <h4 className='text-lg font-robot-slab text-red-300 font-normal'>
+                  Day low: ${day_low}
+                </h4>
+              </div>
+              {/**year high and year low */}
+              <div className='grid space-y-2 '>
+                <h4 className='text-lg font-robot-slab text-blue-500 font-normal'>
+                  Year high: ${high_price}
+                </h4>
+                <h4 className='text-lg font-robot-slab text-red-500 font-normal'>
+                  Year low: ${low_price}
+                </h4>
+              </div>
+            </div>
+            <div className='grid space-y-2 place-items-center'>
+              <h3 className='text-2xl font-normal font-robot-slab text-blue-200'>
+                Price Average
+              </h3>
+              <span
+                className='
+              text-lg 
+              text-green-600 
+              grid 
+              font-robot-slab 
+              font-semibold'
+              >
+                {average50 && (
+                  <h4>Price past 50 days: {average50.toFixed(2)}</h4>
+                )}
+                {average200 && (
+                  <h4>Price past 50 days: {average200.toFixed(2)}</h4>
+                )}
+              </span>
+            </div>
+            <h3 className='text-2xl font-normal font-robot-slab text-blue-200'>
+              Change from previous
+            </h3>
+            <div className='flex items-center space-x-3 text-gray-600'>
+              <h2 className='text-lg font-robot-slab font-semibold'>
+                Change: {change.toFixed(2)}
+              </h2>
+              <h2 className='text-lg font-robot-slab font-semibold'>
+                Change (Percentage) :{percentage_change.toFixed(2)}
+              </h2>
+            </div>
+            <h4 className='text-xl font-robot-slab font-semibold text-blue-400'>
+              Volume: {countFormatter(volume)}
+            </h4>
+            <h5 className='text-xl font-robot-slab font-semibold text-blue-400'>
+              Average volume: {countFormatter(averageVol)}
+            </h5>
+            <h3 className='text-xl font-robot-slab font-semibold text-blue-400'>
+              Market cap: {countFormatter(market_cap)}
+            </h3>
           </div>
         </ModalBody>
         <ModalFooter>

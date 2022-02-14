@@ -200,6 +200,11 @@ function Finance ({
                 high_price={stock.yearHigh}
                 volume={stock.volume}
                 market_cap={stock.marketCap}
+                day_high={stock.dayHigh}
+                day_low={stock.dayLow}
+                average50={stock.priceAvg50}
+                average200={stock.priceAvg200}
+                averageVol={stock.avgVolume}
               />
             ))}
             {msft_quote.map(stock => (
@@ -213,6 +218,11 @@ function Finance ({
                 high_price={stock.yearHigh}
                 volume={stock.volume}
                 market_cap={stock.marketCap}
+                day_high={stock.dayHigh}
+                day_low={stock.dayLow}
+                average50={stock.priceAvg50}
+                average200={stock.priceAvg200}
+                averageVol={stock.avgVolume}
               />
             ))}
             {tsla_quote.map(stock => (
@@ -226,9 +236,14 @@ function Finance ({
                 high_price={stock.yearHigh}
                 volume={stock.volume}
                 market_cap={stock.marketCap}
+                day_high={stock.dayHigh}
+                day_low={stock.dayLow}
+                average50={stock.priceAvg50}
+                average200={stock.priceAvg200}
+                averageVol={stock.avgVolume}
               />
             ))}
-            {/*fb_quote.map(stock => (
+            {fb_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -239,6 +254,47 @@ function Finance ({
                 high_price={stock.yearHigh}
                 volume={stock.volume}
                 market_cap={stock.marketCap}
+                day_high={stock.dayHigh}
+                day_low={stock.dayLow}
+                average50={stock.priceAvg50}
+                average200={stock.priceAvg200}
+                averageVol={stock.avgVolume}
+              />
+            ))}
+            {amzn_quote.map(stock => (
+              <WatchList
+                symbol={stock.symbol}
+                company={stock.name}
+                current_price={stock.price}
+                change={stock.change}
+                percentage_change={stock.changesPercentage}
+                low_price={stock.yearLow}
+                high_price={stock.yearHigh}
+                volume={stock.volume}
+                market_cap={stock.marketCap}
+                day_high={stock.dayHigh}
+                day_low={stock.dayLow}
+                average50={stock.priceAvg50}
+                average200={stock.priceAvg200}
+                averageVol={stock.avgVolume}
+              />
+            ))}
+            {spot_quote.map(stock => (
+              <WatchList
+                symbol={stock.symbol}
+                company={stock.name}
+                current_price={stock.price}
+                change={stock.change}
+                percentage_change={stock.changesPercentage}
+                low_price={stock.yearLow}
+                high_price={stock.yearHigh}
+                volume={stock.volume}
+                market_cap={stock.marketCap}
+                day_high={stock.dayHigh}
+                day_low={stock.dayLow}
+                average50={stock.priceAvg50}
+                average200={stock.priceAvg200}
+                averageVol={stock.avgVolume}
               />
             ))}
             {ibm_quote.map(stock => (
@@ -252,8 +308,13 @@ function Finance ({
                 high_price={stock.yearHigh}
                 volume={stock.volume}
                 market_cap={stock.marketCap}
+                day_high={stock.dayHigh}
+                day_low={stock.dayLow}
+                average50={stock.priceAvg50}
+                average200={stock.priceAvg200}
+                averageVol={stock.avgVolume}
               />
-            ))*/}
+            ))}
           </div>
         </div>
       </main>
@@ -280,7 +341,7 @@ export async function getServerSideProps () {
     `https://financialmodelingprep.com/api/v3/quote/TSLA?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  /*const fourthReturn = await fetch(
+  const fourthReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/FB?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
@@ -295,7 +356,6 @@ export async function getServerSideProps () {
   const seventhReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/IBM?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
-  */
 
   const displayedProf = await fetch(
     `https://financialmodelingprep.com/api/v3/profile/ABNB?apikey=${process.env.fmp_key}`
@@ -307,10 +367,10 @@ export async function getServerSideProps () {
       apple_quote: stockReturn,
       msft_quote: secondReturn,
       tsla_quote: thirdReturn,
-      /*amzn_quote: fifthReturn,
+      fb_quote: fourthReturn,
+      amzn_quote: fifthReturn,
       spot_quote: sixthReturn,
-      fb_quote: seventhReturn,
-      ibm_quote: eighthReturn,*/
+      ibm_quote: seventhReturn,
       displayed_profile: displayedProf
     }
   }
