@@ -27,16 +27,14 @@ function Finance ({
   fb_quote,
   ibm_quote,
   displayed_profile,
-  finn_stock,
-  finn_stock_two,
-  finn_stock_three,
-  finn_stock_four
+  alpha_test
 }) {
   const router = useRouter()
   const [user] = useAuthState(creds)
 
   const googleSignIn = () => {
     creds.signInWithPopup(provider).catch(alert)
+    router.push('/')
   }
 
   const signIn = (
@@ -76,7 +74,7 @@ function Finance ({
     return signIn
   }
 
-  console.log(tsla_quote)
+  console.log(alpha_test)
 
   return (
     <div
@@ -207,7 +205,7 @@ function Finance ({
                 averageVol={stock.avgVolume}
               />
             ))}
-            {msft_quote.map(stock => (
+            {/*msft_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -243,7 +241,7 @@ function Finance ({
                 averageVol={stock.avgVolume}
               />
             ))}
-            {/*fb_quote.map(stock => (
+            {fb_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -361,6 +359,10 @@ export async function getServerSideProps () {
     `https://financialmodelingprep.com/api/v3/profile/ABNB?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
+  const alphaData = await fetch(
+    `https://finnhub.io/api/v1/quote?symbol=AAPL&token=c7sueuaad3i9jn7rmb70`
+  ).then(res => res.json())
+
   return {
     props: {
       finnhub_news: marketNews,
@@ -371,7 +373,8 @@ export async function getServerSideProps () {
       amzn_quote: fifthReturn,
       spot_quote: sixthReturn,
       ibm_quote: seventhReturn,
-      displayed_profile: displayedProf
+      displayed_profile: displayedProf,
+      alpha_test: alphaData
     }
   }
 }

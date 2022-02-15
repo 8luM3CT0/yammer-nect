@@ -121,7 +121,7 @@ function WatchList ({
               {/**day high and day low */}
               <div className='grid space-y-2 '>
                 <h4 className='text-lg font-robot-slab text-blue-300 font-normal'>
-                  Day high: ${day_high}
+                  Day high: ${day_high.toFixed(2)}
                 </h4>
                 <h4 className='text-lg font-robot-slab text-red-300 font-normal'>
                   Day low: ${day_low}
