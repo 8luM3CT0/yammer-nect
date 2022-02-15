@@ -243,7 +243,7 @@ function Finance ({
                 averageVol={stock.avgVolume}
               />
             ))}
-            {fb_quote.map(stock => (
+            {/*fb_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -314,7 +314,7 @@ function Finance ({
                 average200={stock.priceAvg200}
                 averageVol={stock.avgVolume}
               />
-            ))}
+            ))*/}
           </div>
         </div>
       </main>
