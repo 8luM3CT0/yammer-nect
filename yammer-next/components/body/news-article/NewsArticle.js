@@ -15,7 +15,8 @@ function NewsArticle ({
   creator,
   excerpt,
   fullDescription,
-  content
+  content,
+  link
 }) {
   const router = useRouter()
   const [showNews, setShowNews] = useState(false)
@@ -128,9 +129,26 @@ function NewsArticle ({
               <h3 className='text-lg font-google-sans font-normal text-gray-600'>
                 {fullDescription}
               </h3>
+            ) : excerpt ? (
+              <h3 className='text-lg font-google-sans font-normal text-gray-600'>
+                {excerpt}
+              </h3>
             ) : (
               ' '
             )}
+            <a
+              href={link}
+              className='
+              lg:text-base 
+              text-sm 
+              font-google-sans 
+              font-semibold 
+              text-blue-500
+              hover:underline
+              '
+            >
+              {link}
+            </a>
           </div>
         </ModalBody>
         <ModalFooter>

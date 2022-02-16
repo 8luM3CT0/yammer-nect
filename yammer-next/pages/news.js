@@ -37,6 +37,8 @@ function News ({
   const [user] = useAuthState(creds)
   const [openTab, setOpenTab] = useState(1)
 
+  console.log(us_news)
+
   return (
     <>
       <div
@@ -257,6 +259,7 @@ function News ({
                         excerpt={doc.description}
                         fullDescription={doc.full_description}
                         content={doc.content}
+                        link={doc.link}
                       />
                     ))}
                   </div>
@@ -279,6 +282,7 @@ function News ({
                         excerpt={doc.description}
                         fullDescription={doc.full_description}
                         content={doc.content}
+                        link={doc.link}
                       />
                     ))}
                   </div>
@@ -301,6 +305,7 @@ function News ({
                         excerpt={doc.description}
                         fullDescription={doc.full_description}
                         content={doc.content}
+                        link={doc.link}
                       />
                     ))}
                   </div>
@@ -323,6 +328,7 @@ function News ({
                         excerpt={doc.description}
                         fullDescription={doc.full_description}
                         content={doc.content}
+                        link={doc.link}
                       />
                     ))}
                   </div>
@@ -345,6 +351,7 @@ function News ({
                         excerpt={doc.description}
                         fullDescription={doc.full_description}
                         content={doc.content}
+                        link={doc.link}
                       />
                     ))}
                   </div>
@@ -367,6 +374,7 @@ function News ({
                         excerpt={doc.description}
                         fullDescription={doc.full_description}
                         content={doc.content}
+                        link={doc.link}
                       />
                     ))}
                   </div>
@@ -389,6 +397,7 @@ function News ({
                         excerpt={doc.description}
                         fullDescription={doc.full_description}
                         content={doc.content}
+                        link={doc.link}
                       />
                     ))}
                   </div>
@@ -411,6 +420,7 @@ function News ({
                         excerpt={doc.description}
                         fullDescription={doc.full_description}
                         content={doc.content}
+                        link={doc.link}
                       />
                     ))}
                   </div>
@@ -433,6 +443,7 @@ function News ({
                         excerpt={doc.description}
                         fullDescription={doc.full_description}
                         content={doc.content}
+                        link={doc.link}
                       />
                     ))}
                   </div>
@@ -455,6 +466,7 @@ function News ({
                         excerpt={doc.description}
                         fullDescription={doc.full_description}
                         content={doc.content}
+                        link={doc.link}
                       />
                     ))}
                   </div>
