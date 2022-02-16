@@ -18,6 +18,7 @@ function NewsBanner ({ urlToImage, title, creator, content, fullDescription }) {
   return (
     <>
       <div
+        onClick={() => setShowNews(true)}
         style={
           urlToImage
             ? { backgroundImage: `url(${urlToImage})` }
@@ -40,7 +41,6 @@ function NewsBanner ({ urlToImage, title, creator, content, fullDescription }) {
       '
       >
         <div
-          onClick={() => setShowNews(true)}
           className='
       grid 
       space-y-4 

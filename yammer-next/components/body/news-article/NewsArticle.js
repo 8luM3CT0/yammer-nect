@@ -121,21 +121,23 @@ function NewsArticle ({
         '
               />
             )}
-            {content ? (
-              <h3 className='text-lg font-google-sans font-normal text-gray-600'>
-                {content}
-              </h3>
-            ) : fullDescription ? (
-              <h3 className='text-lg font-google-sans font-normal text-gray-600'>
-                {fullDescription}
-              </h3>
-            ) : excerpt ? (
-              <h3 className='text-lg font-google-sans font-normal text-gray-600'>
-                {excerpt}
-              </h3>
-            ) : (
-              ' '
-            )}
+            <div className='overflow-y-scroll scrollbar-hide h-[230px]'>
+              {content ? (
+                <h3 className='text-lg font-google-sans font-normal text-gray-600'>
+                  {content}
+                </h3>
+              ) : fullDescription ? (
+                <h3 className='text-lg font-google-sans font-normal text-gray-600'>
+                  {fullDescription}
+                </h3>
+              ) : excerpt ? (
+                <h3 className='text-lg font-google-sans font-normal text-gray-600'>
+                  {excerpt}
+                </h3>
+              ) : (
+                ' '
+              )}
+            </div>
             <a
               href={link}
               className='
