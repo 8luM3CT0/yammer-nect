@@ -121,7 +121,16 @@ function NewsArticle ({
         '
               />
             )}
-            <div className='overflow-y-scroll scrollbar-hide h-[230px]'>
+            <div
+              className='
+            overflow-y-scroll
+            rounded-xl 
+            bg-blue-50 
+            px-3 
+            py-2 
+            scrollbar-hide 
+            h-[230px]'
+            >
               {content ? (
                 <h3 className='text-lg font-google-sans font-normal text-gray-600'>
                   {content}
