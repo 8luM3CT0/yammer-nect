@@ -325,13 +325,13 @@
     @apply
     text-lg 
     w-[110px] 
-    lg:w-[580px] 
-    overflow-hidden  
+    lg:w-[580px]
+    truncate   
     font-google-sans 
     font-semibold
   }
 
-  .articleExcerpt{
+  .articleExcerptDiv{
     @apply
     hidden
     lg:inline-flex
@@ -366,7 +366,7 @@
     grid
     justify-center
     place-items-center
-    px-[30px] 
+    px-[20px] 
     py-[60px] 
     lg:px-[90px] 
     lg:py-[120px]
@@ -383,7 +383,17 @@
     w-[70px]
     truncate
     lg:w-full
+  }
 
+  .newsTitleInModal{
+    @apply
+    text-orange-300 
+    xl:text-2xl
+    text-lg 
+    font-robot-slab 
+    font-semibold
+    px-8
+    w-full
   }
   
   .watchListDetails{

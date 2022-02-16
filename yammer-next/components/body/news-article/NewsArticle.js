@@ -82,7 +82,7 @@ function NewsArticle ({
         toggler={() => setShowNews(false)}
       >
         <ModalHeader toggler={() => setShowNews(false)}>
-          <h3 className='newsModalTitle'>{title}</h3>
+          <h3 className='newsTitleInModal'>{title}</h3>
         </ModalHeader>
         <ModalBody>
           <div
