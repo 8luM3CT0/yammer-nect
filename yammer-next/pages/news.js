@@ -94,6 +94,7 @@ function News ({
                     creator={news.creator}
                     content={news.content}
                     fullDescription={news.full_description}
+                    link={news.link}
                   />
                 ))}
               </Carousel>
@@ -108,8 +109,9 @@ function News ({
                 space-x-20 
                 overflow-x-scroll
                 scrollbar-hide 
-                flex 
-                items-center'
+                flex
+                items-center
+                '
               >
                 <TabItem
                   onClick={e => {

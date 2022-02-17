@@ -11,14 +11,21 @@ import {
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 
-function NewsBanner ({ urlToImage, title, creator, content, fullDescription }) {
+function NewsBanner ({
+  urlToImage,
+  title,
+  creator,
+  content,
+  fullDescription,
+  link
+}) {
   const router = useRouter()
   const [showNews, setShowNews] = useState(false)
 
   return (
     <>
-      <div
-        onClick={() => setShowNews(true)}
+      <a
+        href={link}
         style={
           urlToImage
             ? { backgroundImage: `url(${urlToImage})` }
@@ -81,7 +88,7 @@ function NewsBanner ({ urlToImage, title, creator, content, fullDescription }) {
             )}
           </h2>
         </div>
-      </div>
+      </a>
       <Modal
         size='regular'
         active={showNews}

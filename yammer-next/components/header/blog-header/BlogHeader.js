@@ -152,6 +152,7 @@ function BlogHeader () {
               </div>
             </Button>
             <Button
+              onClick={() => router.push('/finance')}
               color='blue'
               buttonType='link'
               iconOnly={false}
@@ -273,6 +274,7 @@ function BlogHeader () {
               </div>
             </Button>
             <Button
+              onClick={() => router.push('/finance')}
               color='blue'
               buttonType='link'
               iconOnly={false}

@@ -1,7 +1,7 @@
 //front-end
 //back-end
 
-function TopList () {
+function TopList ({ symbol, title, price }) {
   return (
     <div
       className='
@@ -28,140 +28,7 @@ function TopList () {
           Top list of stocks
         </h1>
       </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>SPOT</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>
-          Spotify Technology SA
-        </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>AAPL</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>Apple Inc.</h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>AMZN</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>
-          Amazon Inc.
-        </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>TSLA</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>Tesla Inc.</h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>FB</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>
-          Meta Platforms Inc.
-        </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>GOOGL</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>
-          Alphabet Inc.
-        </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
+
       <span
         className='flex 
       items-center 
@@ -181,7 +48,7 @@ function TopList () {
       >
         <h1 className='font-semibold text-lg '>UBER</h1>-
         <h2 className='font-normal text-base w-[120px] truncate'>Uber Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h3 className='font-light text-base'>$36.58</h3>
       </span>
       <span
         className='flex 
@@ -202,7 +69,7 @@ function TopList () {
       >
         <h1 className='font-semibold text-lg '>LYFT</h1>-
         <h2 className='font-normal text-base w-[120px] truncate'>Lyft Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h3 className='font-light text-base'>$43.82</h3>
       </span>
       <span
         className='flex 
@@ -225,7 +92,7 @@ function TopList () {
         <h2 className='font-normal text-base w-[120px] truncate'>
           AirBnb Inc.
         </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
+        -<h3 className='font-light text-base'>$186.64</h3>
       </span>
       <span
         className='flex 
@@ -248,146 +115,9 @@ function TopList () {
         <h2 className='font-normal text-base w-[120px] truncate'>
           Netflix Inc.
         </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
+        -<h3 className='font-light text-base'>$398.08</h3>
       </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>MSFT</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>
-          Microsoft Inc.
-        </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>CRM</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>
-          Salesforce Inc.
-        </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>ORCL</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>
-          Oracle Inc.
-        </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>NVDA</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>
-          NVIDIA Corp.
-        </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>VZN</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>
-          Verizon Inc.
-        </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
-      <span
-        className='flex 
-      items-center 
-      w-full
-      px-5
-      text-green-300
-      justify-between 
-      space-x-3 
-      font-google-sans
-      transform
-      transition
-      duration-300
-      hover:scale-110
-      ease-in-out
-      cursor-pointer
-      '
-      >
-        <h1 className='font-semibold text-lg '>TMUS</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>
-          T-Mobile US Inc.
-        </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
-      </span>
+
       <span
         className='flex 
       items-center 
@@ -409,7 +139,7 @@ function TopList () {
         <h2 className='font-normal text-base w-[120px] truncate'>
           Twitter Inc.
         </h2>
-        -<h3 className='font-light text-base'>$139.97</h3>
+        -<h3 className='font-light text-base'>$36.24</h3>
       </span>
       <span
         className='flex 
@@ -430,7 +160,7 @@ function TopList () {
       >
         <h1 className='font-semibold text-lg '>T</h1>-
         <h2 className='font-normal text-base w-[120px] truncate'>AT&T Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h3 className='font-light text-base'>$23.94</h3>
       </span>
       <span
         className='flex 
@@ -451,7 +181,7 @@ function TopList () {
       >
         <h1 className='font-semibold text-lg '>SNAP</h1>-
         <h2 className='font-normal text-base w-[120px] truncate'>Snap Inc.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h3 className='font-light text-base'>$40.01</h3>
       </span>
       <span
         className='flex 
@@ -470,9 +200,80 @@ function TopList () {
       cursor-pointer
       '
       >
-        <h1 className='font-semibold text-lg '>IBM</h1>-
-        <h2 className='font-normal text-base w-[120px] truncate'>IBM Corp.</h2>-
-        <h3 className='font-light text-base'>$139.97</h3>
+        <h1 className='font-semibold text-lg '>BRK.A</h1>-
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Berkshire Hawthaway Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$473.98K</h3>
+      </span>
+      <span
+        className='flex 
+      items-center 
+      w-full
+      px-5
+      text-green-300
+      justify-between 
+      space-x-3 
+      font-google-sans
+      transform
+      transition
+      duration-300
+      hover:scale-110
+      ease-in-out
+      cursor-pointer
+      '
+      >
+        <h1 className='font-semibold text-lg '>BTI</h1>-
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          British American Tobacco Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$46.50</h3>
+      </span>
+      <span
+        className='flex 
+      items-center 
+      w-full
+      px-5
+      text-green-300
+      justify-between 
+      space-x-3 
+      font-google-sans
+      transform
+      transition
+      duration-300
+      hover:scale-110
+      ease-in-out
+      cursor-pointer
+      '
+      >
+        <h1 className='font-semibold text-lg '>HON</h1>-
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          Honeywell International Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$189.53</h3>
+      </span>
+      <span
+        className='flex 
+      items-center 
+      w-full
+      px-5
+      text-green-300
+      justify-between 
+      space-x-3 
+      font-google-sans
+      transform
+      transition
+      duration-300
+      hover:scale-110
+      ease-in-out
+      cursor-pointer
+      '
+      >
+        <h1 className='font-semibold text-lg '>HD</h1>-
+        <h2 className='font-normal text-base w-[120px] truncate'>
+          The Home Depot Inc.
+        </h2>
+        -<h3 className='font-light text-base'>$353.26</h3>
       </span>
     </div>
   )

@@ -351,6 +351,8 @@
     font-robot-slab 
     font-semibold 
     text-blue-400
+    w-[390px]
+    truncate
   }
 
   .articleExcerpt{

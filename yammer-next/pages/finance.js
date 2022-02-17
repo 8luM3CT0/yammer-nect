@@ -15,6 +15,9 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 import { creds, store, provider } from '../firebase'
 import { useAuthState } from 'react-firebase-hooks/auth'
+import top_list_data from '../utils/top_list_data.json'
+import watch_list_data from '../utils/watch_list_data.json'
+import displayed_profile_data from '../utils/displayed_profile_data.json'
 
 function Finance ({
   finnhub_news,
@@ -74,8 +77,6 @@ function Finance ({
     return signIn
   }
 
-  console.log(alpha_test)
-
   return (
     <div
       className='
@@ -101,9 +102,9 @@ function Finance ({
       max-w-full
       '
       >
-        {finnhub_news.map(finn => (
+        {/*finnhub_news.map(finn => (
           <MarketNews key={finn.headline} title={finn.headline} />
-        ))}
+        ))*/}
       </div>
       <FinanceHeader />
       <main
@@ -130,7 +131,7 @@ function Finance ({
         bg-gray-800'
         >
           <div className='h-[480px] grid place-items-center'>
-            {displayed_profile.map(profile => (
+            {displayed_profile_data.map(profile => (
               <DisplayedStock
                 companyLogo={profile.image}
                 symbol={profile.symbol}
@@ -146,7 +147,13 @@ function Finance ({
               />
             ))}
           </div>
-          <TopList />
+          {top_list_data.map(stock => (
+            <TopList
+              symbol={stock.symbol}
+              title={stock.title}
+              price={stock.price}
+            />
+          ))}
         </div>
         <div
           className='
@@ -187,7 +194,7 @@ function Finance ({
   mx-auto
           '
           >
-            {apple_quote.map(stock => (
+            {watch_list_data.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -205,25 +212,11 @@ function Finance ({
                 averageVol={stock.avgVolume}
               />
             ))}
-            {/*msft_quote.map(stock => (
-              <WatchList
-                symbol={stock.symbol}
-                company={stock.name}
-                current_price={stock.price}
-                change={stock.change}
-                percentage_change={stock.changesPercentage}
-                low_price={stock.yearLow}
-                high_price={stock.yearHigh}
-                volume={stock.volume}
-                market_cap={stock.marketCap}
-                day_high={stock.dayHigh}
-                day_low={stock.dayLow}
-                average50={stock.priceAvg50}
-                average200={stock.priceAvg200}
-                averageVol={stock.avgVolume}
-              />
-            ))}
-            {tsla_quote.map(stock => (
+            {/*
+            ***********************************
+            WILL NOT USE OFFICIAL DATA UNTIL NEEDED
+            ************************************ 
+            apple_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -242,6 +235,42 @@ function Finance ({
               />
             ))}
             {fb_quote.map(stock => (
+              <WatchList
+                symbol={stock.symbol}
+                company={stock.name}
+                current_price={stock.price}
+                change={stock.change}
+                percentage_change={stock.changesPercentage}
+                low_price={stock.yearLow}
+                high_price={stock.yearHigh}
+                volume={stock.volume}
+                market_cap={stock.marketCap}
+                day_high={stock.dayHigh}
+                day_low={stock.dayLow}
+                average50={stock.priceAvg50}
+                average200={stock.priceAvg200}
+                averageVol={stock.avgVolume}
+              />
+            ))}
+            {msft_quote.map(stock => (
+              <WatchList
+                symbol={stock.symbol}
+                company={stock.name}
+                current_price={stock.price}
+                change={stock.change}
+                percentage_change={stock.changesPercentage}
+                low_price={stock.yearLow}
+                high_price={stock.yearHigh}
+                volume={stock.volume}
+                market_cap={stock.marketCap}
+                day_high={stock.dayHigh}
+                day_low={stock.dayLow}
+                average50={stock.priceAvg50}
+                average200={stock.priceAvg200}
+                averageVol={stock.avgVolume}
+              />
+            ))}
+            {tsla_quote.map(stock => (
               <WatchList
                 symbol={stock.symbol}
                 company={stock.name}
@@ -322,7 +351,7 @@ function Finance ({
 
 export default Finance
 
-export async function getServerSideProps () {
+/*export async function getServerSideProps () {
   const marketNews = await fetch(
     `https://finnhub.io/api/v1/news?${finance_endpoints.fetchMarketNews.url}`
   ).then(res => res.json())
@@ -378,3 +407,4 @@ export async function getServerSideProps () {
     }
   }
 }
+*/

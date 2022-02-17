@@ -48,8 +48,7 @@ function DisplayedStock ({
           src={companyLogo}
           alt=''
           className='
-        h-24 
-        w-24 
+        relative
         rounded-xl 
         mx-auto 
         align-middle'
@@ -84,8 +83,8 @@ function DisplayedStock ({
               src={companyLogo}
               alt=''
               className='
-            h-24 
-            w-24 
+            
+            relative
             rounded-xl 
             mx-auto 
             align-middle'
