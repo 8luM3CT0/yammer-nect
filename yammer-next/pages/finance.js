@@ -103,9 +103,13 @@ function Finance ({
       max-w-full
       '
       >
-        {finnhub_news.map(finn => (
-          <MarketNews key={finn.headline} title={finn.headline} />
-        ))}
+        {/*finnhub_news.map(finn => (
+          <MarketNews
+            key={finn.id}
+            title={finn.headline}
+            newsCategory={finn.category}
+          />
+        ))*/}
       </div>
       <FinanceHeader />
       <main

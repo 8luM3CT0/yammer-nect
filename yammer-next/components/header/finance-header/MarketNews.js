@@ -10,7 +10,7 @@ import {
 //back-end
 import { useState } from 'react'
 
-function MarketNews ({ title }) {
+function MarketNews ({ title, id, newsCategory }) {
   const [openMarketNews, setOpenMarketNews] = useState(false)
 
   return (
@@ -45,7 +45,7 @@ function MarketNews ({ title }) {
         toggler={() => setOpenMarketNews(false)}
       >
         <ModalHeader toggler={() => setOpenMarketNews(false)}>
-          Market news
+          News type: {newsCategory}
         </ModalHeader>
         <ModalBody>
           <div className='grid place-items-center p-[60px]'>
