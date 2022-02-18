@@ -306,6 +306,7 @@
     hover:bg-blue-300
     grid
     lg:flex
+    place-items-center
     justify-center
     mx-auto
     rounded-lg

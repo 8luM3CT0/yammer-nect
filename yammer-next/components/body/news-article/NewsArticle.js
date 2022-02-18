@@ -126,6 +126,7 @@ function NewsArticle ({
             overflow-y-scroll
             rounded-xl 
             bg-blue-50 
+            w-[360px]
             px-3 
             py-2 
             scrollbar-hide 
