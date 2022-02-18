@@ -103,13 +103,17 @@ function Finance ({
       max-w-full
       '
       >
-        {/*finnhub_news.map(finn => (
+        {finnhub_news.map(finn => (
           <MarketNews
             key={finn.id}
             title={finn.headline}
             newsCategory={finn.category}
+            newsPublished={finn.datetime}
+            newsSource={finn.source}
+            newsSummary={finn.summary}
+            newsUrl={finn.url}
           />
-        ))*/}
+        ))}
       </div>
       <FinanceHeader />
       <main

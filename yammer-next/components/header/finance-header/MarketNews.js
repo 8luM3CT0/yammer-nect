@@ -9,8 +9,17 @@ import {
 } from '../../index'
 //back-end
 import { useState } from 'react'
+import moment from 'moment'
 
-function MarketNews ({ title, id, newsCategory }) {
+function MarketNews ({
+  id,
+  newsCategory,
+  title,
+  newsPublished,
+  newsSource,
+  newsSummary,
+  newsUrl
+}) {
   const [openMarketNews, setOpenMarketNews] = useState(false)
 
   return (
@@ -48,10 +57,48 @@ function MarketNews ({ title, id, newsCategory }) {
           News type: {newsCategory}
         </ModalHeader>
         <ModalBody>
-          <div className='grid place-items-center p-[60px]'>
+          <div
+            className='
+          grid 
+          place-items-center 
+          space-y-6  
+          p-[60px]'
+          >
             <p className='text-lg font-google-sans font-semibold text-green-500'>
               {title}
             </p>
+            {newsPublished ? (
+              <p className='text-gray-700 font-google-sans font-light text-sm'>
+                {moment(newsPublished).format('MMM/DD/YYYY, LT')}
+              </p>
+            ) : (
+              ' '
+            )}
+            <p className='text-gray-600 font-google-sans font-normal text-base'>
+              Published by: {newsSource}
+            </p>
+            <div
+              className='
+            h-[210px] 
+            px-4 
+            py-3 
+            overflow-y-scroll 
+            scrollbar-hide'
+            >
+              <h2 className='text-base font-normal font-google-sans text-gray-800'>
+                {newsSummary}
+              </h2>
+            </div>
+            <a
+              className='
+            cursor-pointer
+            text-green-700 
+            hover:underline 
+            font-google-sans 
+            font-normal'
+            >
+              Article link: {newsUrl}
+            </a>
           </div>
         </ModalBody>
         <ModalFooter>
@@ -62,7 +109,7 @@ function MarketNews ({ title, id, newsCategory }) {
             iconOnly={false}
             block={false}
             rounded={false}
-            ripple='ligh'
+            ripple='light'
           >
             <Icon name='close' />
             Close
