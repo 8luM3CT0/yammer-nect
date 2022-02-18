@@ -101,6 +101,7 @@ function News ({
             </div>
           </div>
           {/**end of header news */}
+
           <Tab>
             <TabList color='blue'>
               <div

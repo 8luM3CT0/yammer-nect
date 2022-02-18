@@ -30,7 +30,8 @@ function Finance ({
   fb_quote,
   ibm_quote,
   displayed_profile,
-  alpha_test
+  alpha_test,
+  twtr_quote
 }) {
   const router = useRouter()
   const [user] = useAuthState(creds)
@@ -102,9 +103,9 @@ function Finance ({
       max-w-full
       '
       >
-        {/*finnhub_news.map(finn => (
+        {finnhub_news.map(finn => (
           <MarketNews key={finn.headline} title={finn.headline} />
-        ))*/}
+        ))}
       </div>
       <FinanceHeader />
       <main
@@ -194,6 +195,24 @@ function Finance ({
   mx-auto
           '
           >
+            {twtr_quote.map(stock => (
+              <WatchList
+                symbol={stock.symbol}
+                company={stock.name}
+                current_price={stock.price}
+                change={stock.change}
+                percentage_change={stock.changesPercentage}
+                low_price={stock.yearLow}
+                high_price={stock.yearHigh}
+                volume={stock.volume}
+                market_cap={stock.marketCap}
+                day_high={stock.dayHigh}
+                day_low={stock.dayLow}
+                average50={stock.priceAvg50}
+                average200={stock.priceAvg200}
+                averageVol={stock.avgVolume}
+              />
+            ))}
             {watch_list_data.map(stock => (
               <WatchList
                 symbol={stock.symbol}
@@ -351,51 +370,56 @@ function Finance ({
 
 export default Finance
 
-/*export async function getServerSideProps () {
+export async function getServerSideProps () {
   const marketNews = await fetch(
     `https://finnhub.io/api/v1/news?${finance_endpoints.fetchMarketNews.url}`
   ).then(res => res.json())
 
-  const stockReturn = await fetch(
+  const twtrReturn = await fetch(
+    `https://financialmodelingprep.com/api/v3/quote/TWTR?apikey=${process.env.fmp_key}`
+  ).then(res => res.json())
+
+  /*const AAPLReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/AAPL?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  const secondReturn = await fetch(
+  const MSFTReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/MSFT?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  const thirdReturn = await fetch(
+  const TSLAReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/TSLA?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  const fourthReturn = await fetch(
+  const METAReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/FB?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  const fifthReturn = await fetch(
+  const AMZNReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/AMZN?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  const sixthReturn = await fetch(
+  const SPOTReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/SPOT?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
-  const seventhReturn = await fetch(
+  const IBMReturn = await fetch(
     `https://financialmodelingprep.com/api/v3/quote/IBM?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
   const displayedProf = await fetch(
-    `https://financialmodelingprep.com/api/v3/profile/ABNB?apikey=${process.env.fmp_key}`
+    `https://financialmodelingprep.com/api/v3/profile/GOOGL?apikey=${process.env.fmp_key}`
   ).then(res => res.json())
 
   const alphaData = await fetch(
     `https://finnhub.io/api/v1/quote?symbol=AAPL&token=c7sueuaad3i9jn7rmb70`
   ).then(res => res.json())
-
+*/
   return {
     props: {
       finnhub_news: marketNews,
-      apple_quote: stockReturn,
+      twtr_quote: twtrReturn
+      /* apple_quote: stockReturn,
       msft_quote: secondReturn,
       tsla_quote: thirdReturn,
       fb_quote: fourthReturn,
@@ -403,8 +427,7 @@ export default Finance
       spot_quote: sixthReturn,
       ibm_quote: seventhReturn,
       displayed_profile: displayedProf,
-      alpha_test: alphaData
+      alpha_test: alphaData*/
     }
   }
 }
-*/
